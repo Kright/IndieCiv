@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TileImprovementData>
+	<TileImprovement>
+		<Type>TILEIMPROVEMENT_ROADS</Type>
+		<Description>TXT_KEY_TILEIMPROVEMENT_ROADS</Description>
+		<Civilopedia>TXT_KEY_TILEIMPROVEMENT_ROADS_PEDIA</Civilopedia>
+		<TileImprovementType>TILEIMPROVEMENTTYPE_ROADS</TileImprovementType>
+		<TileImprovementArt>TILEIMPROVEMENT_ART_ROADS</TileImprovementArt>
+    <Key>R</Key>
+	</TileImprovement>
+</TileImprovementData>

@@ -1,0 +1,418 @@
+<?xml version="1.0"?>
+<CityImprovementData>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_PALACE</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_PALACE</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_BARRACKS</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_BARRACKS</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_GRANARY</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_GRANARY</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_TEMPLE</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_TEMPLE</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_MARKETPLACE</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_MARKETPLACE</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_LIBRARY</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_LIBRARY</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_COURTHOUSE</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_COURTHOUSE</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_WALLS</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_WALLS</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_AQUEDUCT</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_AQUEDUCT</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_BANK</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_BANK</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_CATHEDRAL</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_CATHEDRAL</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_UNIVERSITY</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_UNIVERSITY</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_COLOSSEUM</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_COLOSSEUM</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_FACTORY</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_FACTORY</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_MANUFACTURING_PLANT</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_MANUFACTURING_PLANT</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_RECYCLING_CENTER</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_RECYCLING_CENTER</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_COAL_PLANT</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_COAL_PLANT</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_HYDRO_PLANT</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_HYDRO_PLANT</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_NUCLEAR_PLANT</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_NUCLEAR_PLANT</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_HOSPITAL</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_HOSPITAL</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_RESEARCH_LAB</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_RESEARCH_LAB</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_MASS_TRANSIT_SYSTEM</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_MASS_TRANSIT_SYSTEM</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_SAM_MISSILE_BATTERY</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_SAM_MISSILE_BATTERY</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_COASTAL_FORTRESS</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_COASTAL_FORTRESS</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_SOLAR_PLANT</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_SOLAR_PLANT</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_HARBOR</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_HARBOR</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_OFFSHORE_PLATFORM</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_OFFSHORE_PLATFORM</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_AIRPORT</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_AIRPORT</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_POLICE_STATION</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_POLICE_STATION</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_WEALTH</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_WEALTH</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_THE_PYRAMIDS</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_THE_PYRAMIDS</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_THE_HANGING_GARDENS</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_THE_HANGING_GARDENS</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_THE_COLOSSUS</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_THE_COLOSSUS</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_THE_GREAT_LIGHTHOUSE</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_THE_GREAT_LIGHTHOUSE</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_THE_GREAT_LIBRARY</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_THE_GREAT_LIBRARY</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_THE_ORACLE</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_THE_ORACLE</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_THE_GREAT_WALL</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_THE_GREAT_WALL</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_SUN_TZU&apos;S_ART_OF_WAR</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_SUN_TZU&apos;S_ART_OF_WAR</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_SISTINE_CHAPEL</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_SISTINE_CHAPEL</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_MAGELLAN&apos;S_VOYAGE</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_MAGELLAN&apos;S_VOYAGE</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_COPERNICUS&apos;_OBSERVATORY</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_COPERNICUS&apos;_OBSERVATORY</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_SHAKESPEARE&apos;S_THEATER</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_SHAKESPEARE&apos;S_THEATER</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_LEONARDO&apos;S_WORKSHOP</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_LEONARDO&apos;S_WORKSHOP</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_JS_BACH&apos;S_CATHEDRAL</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_JS_BACH&apos;S_CATHEDRAL</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_NEWTON&apos;S_UNIVERSITY</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_NEWTON&apos;S_UNIVERSITY</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_SMITH&apos;S_TRADING_COMPANY</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_SMITH&apos;S_TRADING_COMPANY</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_UNIVERSAL_SUFFRAGE</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_UNIVERSAL_SUFFRAGE</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_HOOVER_DAM</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_HOOVER_DAM</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_THEORY_OF_EVOLUTION</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_THEORY_OF_EVOLUTION</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_THE_UNITED_NATIONS</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_THE_UNITED_NATIONS</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_THE_MANHATTAN_PROJECT</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_THE_MANHATTAN_PROJECT</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_CURE_FOR_CANCER</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_CURE_FOR_CANCER</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_LONGEVITY</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_LONGEVITY</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_SETI_PROGRAM</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_SETI_PROGRAM</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_HEROIC_EPIC</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_HEROIC_EPIC</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_IRON_WORKS</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_IRON_WORKS</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_FORBIDDEN_PALACE</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_FORBIDDEN_PALACE</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_MILITARY_ACADEMY</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_MILITARY_ACADEMY</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_THE_PENTAGON</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_THE_PENTAGON</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_WALL_STREET</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_WALL_STREET</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_APOLLO_PROGRAM</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_APOLLO_PROGRAM</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_STRATEGIC_MISSILE_DEFENSE</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_STRATEGIC_MISSILE_DEFENSE</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_INTELLIGENCE_AGENCY</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_INTELLIGENCE_AGENCY</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_BATTLEFIELD_MEDICINE</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_BATTLEFIELD_MEDICINE</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_SS_THRUSTERS</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_SS_THRUSTERS</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_SS_ENGINE</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_SS_ENGINE</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_SS_DOCKING_BAY</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_SS_DOCKING_BAY</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_SS_COCKPIT</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_SS_COCKPIT</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_SS_FUEL_CELLS</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_SS_FUEL_CELLS</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_SS_LIFE_SUPPORT_SYSTEM</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_SS_LIFE_SUPPORT_SYSTEM</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_SS_STASIS_CHAMBER</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_SS_STASIS_CHAMBER</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_SS_STORAGE/SUPPLY</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_SS_STORAGE/SUPPLY</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_SS_PLANETARY_PARTY_LOUNGE</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_SS_PLANETARY_PARTY_LOUNGE</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_SS_EXTERIOR_CASING</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_SS_EXTERIOR_CASING</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_THE_INTERNET</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_THE_INTERNET</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_CIVIL_DEFENSE</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_CIVIL_DEFENSE</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_STOCK_EXCHANGE</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_STOCK_EXCHANGE</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_COMMERCIAL_DOCK</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_COMMERCIAL_DOCK</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_THE_TEMPLE_OF_ARTEMIS</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_THE_TEMPLE_OF_ARTEMIS</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_THE_STATUE_OF_ZEUS</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_THE_STATUE_OF_ZEUS</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_THE_MAUSOLEUM_OF_MAUSOLLOS</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_THE_MAUSOLEUM_OF_MAUSOLLOS</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_KNIGHTS_TEMPLAR</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_KNIGHTS_TEMPLAR</Description>
+    <AvailableTo />
+  </CityImprovement>
+  <CityImprovement>
+    <Type>CITY_IMPROVEMENT_SECRET_POLICE_HQ</Type>
+    <Description>TXT_KEY_CITY_IMPROVEMENT_SECRET_POLICE_HQ</Description>
+    <AvailableTo />
+  </CityImprovement>
+</CityImprovementData>

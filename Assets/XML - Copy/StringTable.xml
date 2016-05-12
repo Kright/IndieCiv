@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<LanguageMaster>
+	
+	<Package Name = "" />
+	
+	<LanguageTables>
+		<Language Name = "English" Script = "Assets//Xml//english.xml" Flag = "" />
+	</LanguageTables>
+	
+</LanguageMaster>

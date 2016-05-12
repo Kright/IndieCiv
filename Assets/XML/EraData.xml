@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<EraData>
+  <Era>
+    <Type>ERA_ANCIENT_TIMES</Type>
+    <Description>TXT_KEY_ERA_ANCIENT_TIMES</Description>
+  </Era>
+  <Era>
+    <Type>ERA_MIDDLE_AGES</Type>
+    <Description>TXT_KEY_ERA_MIDDLE_AGES</Description>
+  </Era>
+  <Era>
+    <Type>ERA_INDUSTRIAL_AGES</Type>
+    <Description>TXT_KEY_ERA_INDUSTRIAL_AGES</Description>
+  </Era>
+  <Era>
+    <Type>ERA_MODERN_TIMES</Type>
+    <Description>TXT_KEY_ERA_MODERN_TIMES</Description>
+  </Era>  
+</EraData>

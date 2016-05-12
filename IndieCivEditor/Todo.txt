@@ -1,0 +1,32 @@
+﻿--> Core
+
+	--> Setup players
+	
+
+
+--> Editor
+	--> Toolbar
+		--> City
+		--> Territory
+			--> Load territory graphic
+		--> Clear map with selected terrrain type
+		--> Change map size
+
+	--> File Watcher
+	--> File Menu
+		--> Load Mod
+		--> Save
+		--> Save As
+		--> Import
+	--> Mod Properties
+	--> Unit FLC search paths
+	--> Edit Rules
+	--> Edit Art defines
+	--> Scenario Properties
+
+	--> Property Grid
+		--> Remove fields that cannot be edited
+
+	--> Issues/Bugs
+		--> Look into why map scrolling speed slows down and then speeds up
+		--> Fix Color Key on Relief graphics

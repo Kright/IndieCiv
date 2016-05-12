@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<EraData>
+	<Era>
+		<Type>ERA_ANCIENT_TIMES</Type>
+		<Description>TXT_KEY_ERA_ANCIENT_TIMES</Description>
+		<Civilopedia>TXT_KEY_ERA_ANCIENT_TIMES_PEDIA</Civilopedia>
+	</Era>
+  <Era>
+    <Type>ERA_MIDDLE_AGES</Type>
+    <Description>TXT_KEY_ERA_MIDDLE_AGES</Description>
+    <Civilopedia>TXT_KEY_ERA_MIDDLE_AGES_PEDIA</Civilopedia>
+  </Era>
+</EraData>

@@ -1,0 +1,355 @@
+<?xml version="1.0"?>
+<CivilizationData>
+  <Civilization>
+    <Type>CIVILIZATION_A_BARBARIAN_CHIEFDOM</Type>
+    <Description>TXT_KEY_CIVILIZATION_A_BARBARIAN_CHIEFDOM</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>205</r>
+      <g>205</g>
+      <b>205</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_ROME</Type>
+    <Description>TXT_KEY_CIVILIZATION_ROME</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>231</r>
+      <g>12</g>
+      <b>12</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_EGYPT</Type>
+    <Description>TXT_KEY_CIVILIZATION_EGYPT</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>235</r>
+      <g>235</g>
+      <b>5</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_GREECE</Type>
+    <Description>TXT_KEY_CIVILIZATION_GREECE</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>121</r>
+      <g>225</g>
+      <b>3</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_BABYLON</Type>
+    <Description>TXT_KEY_CIVILIZATION_BABYLON</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>3</r>
+      <g>41</g>
+      <b>148</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_GERMANY</Type>
+    <Description>TXT_KEY_CIVILIZATION_GERMANY</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>57</r>
+      <g>100</g>
+      <b>252</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_RUSSIA</Type>
+    <Description>TXT_KEY_CIVILIZATION_RUSSIA</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>144</r>
+      <g>107</g>
+      <b>11</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_CHINA</Type>
+    <Description>TXT_KEY_CIVILIZATION_CHINA</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>248</r>
+      <g>197</g>
+      <b>255</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_AMERICA</Type>
+    <Description>TXT_KEY_CIVILIZATION_AMERICA</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>31</r>
+      <g>219</g>
+      <b>219</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_JAPAN</Type>
+    <Description>TXT_KEY_CIVILIZATION_JAPAN</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>152</r>
+      <g>11</g>
+      <b>10</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_FRANCE</Type>
+    <Description>TXT_KEY_CIVILIZATION_FRANCE</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>255</r>
+      <g>79</g>
+      <b>242</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_INDIA</Type>
+    <Description>TXT_KEY_CIVILIZATION_INDIA</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>151</r>
+      <g>151</g>
+      <b>151</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_PERSIA</Type>
+    <Description>TXT_KEY_CIVILIZATION_PERSIA</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>18</r>
+      <g>137</g>
+      <b>154</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_AZTECS</Type>
+    <Description>TXT_KEY_CIVILIZATION_AZTECS</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>11</r>
+      <g>120</g>
+      <b>10</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_ZULULAND</Type>
+    <Description>TXT_KEY_CIVILIZATION_ZULULAND</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>64</r>
+      <g>64</g>
+      <b>64</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_IROQUOIS</Type>
+    <Description>TXT_KEY_CIVILIZATION_IROQUOIS</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>125</r>
+      <g>1</g>
+      <b>156</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_ENGLAND</Type>
+    <Description>TXT_KEY_CIVILIZATION_ENGLAND</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>255</r>
+      <g>142</g>
+      <b>5</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_MONGOLS</Type>
+    <Description>TXT_KEY_CIVILIZATION_MONGOLS</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>194</r>
+      <g>201</g>
+      <b>72</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_SPAIN</Type>
+    <Description>TXT_KEY_CIVILIZATION_SPAIN</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>175</r>
+      <g>219</g>
+      <b>237</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_SCANDINAVIA</Type>
+    <Description>TXT_KEY_CIVILIZATION_SCANDINAVIA</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>199</r>
+      <g>172</g>
+      <b>237</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_OTTOMANS</Type>
+    <Description>TXT_KEY_CIVILIZATION_OTTOMANS</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>210</r>
+      <g>183</g>
+      <b>0</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_CELTS</Type>
+    <Description>TXT_KEY_CIVILIZATION_CELTS</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>119</r>
+      <g>255</g>
+      <b>176</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_ARABIA</Type>
+    <Description>TXT_KEY_CIVILIZATION_ARABIA</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>255</r>
+      <g>200</g>
+      <b>255</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_CARTHAGE</Type>
+    <Description>TXT_KEY_CIVILIZATION_CARTHAGE</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>152</r>
+      <g>11</g>
+      <b>10</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_KOREA</Type>
+    <Description>TXT_KEY_CIVILIZATION_KOREA</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>131</r>
+      <g>0</g>
+      <b>255</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_SUMERIA</Type>
+    <Description>TXT_KEY_CIVILIZATION_SUMERIA</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>175</r>
+      <g>219</g>
+      <b>237</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_HITTITES</Type>
+    <Description>TXT_KEY_CIVILIZATION_HITTITES</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>178</r>
+      <g>137</g>
+      <b>82</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_NETHERLANDS</Type>
+    <Description>TXT_KEY_CIVILIZATION_NETHERLANDS</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>210</r>
+      <g>183</g>
+      <b>0</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_PORTUGAL</Type>
+    <Description>TXT_KEY_CIVILIZATION_PORTUGAL</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>195</r>
+      <g>3</g>
+      <b>255</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_BYZANTINES</Type>
+    <Description>TXT_KEY_CIVILIZATION_BYZANTINES</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>231</r>
+      <g>12</g>
+      <b>12</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_INCA</Type>
+    <Description>TXT_KEY_CIVILIZATION_INCA</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>125</r>
+      <g>1</g>
+      <b>156</b>
+    </Color>
+  </Civilization>
+  <Civilization>
+    <Type>CIVILIZATION_MAYA</Type>
+    <Description>TXT_KEY_CIVILIZATION_MAYA</Description>
+    <CityArt>CITY_ART_ROMANS</CityArt>
+    <FreeAdvance />
+    <Color>
+      <r>31</r>
+      <g>219</g>
+      <b>219</b>
+    </Color>
+  </Civilization>
+</CivilizationData>

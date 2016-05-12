@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<AdvanceData>
+	<Advance>
+		<Type>DISCOVERY_HABITATION</Type>
+		<Description>TXT_KEY_DISCOVERY_HABITATION</Description>
+		<Civilopedia>TXT_KEY_DISCOVERY_HABITATION_PEDIA</Civilopedia>
+		<iTurnsSinceFirstCity>5</iTurnsSinceFirstCity>
+		<iAnyCityPopulation>0</iAnyCityPopulation>
+		<iTotalPopulation>0</iTotalPopulation>
+	</Advance>
+</AdvanceData>>

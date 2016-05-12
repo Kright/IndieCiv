@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<YieldData>
+	<Yield>
+		<Type>YIELD_FOOD</Type>
+		<Description>TXT_KEY_YIELD_FOOD</Description>
+		<Civilopedia>TXT_KEY_YIELD_FOOD_PEDIA</Civilopedia>
+	</Yield>
+  <Yield>
+    <Type>YIELD_PRODUCTION</Type>
+    <Description>TXT_KEY_YIELD_YIELD_PRODUCTION</Description>
+    <Civilopedia>TXT_KEY_YIELD_YIELD_PRODUCTION_PEDIA</Civilopedia>
+  </Yield>
+  <Yield>
+    <Type>YIELD_COMMERCE</Type>
+    <Description>TXT_KEY_YIELD_YIELD_COMMERCE</Description>
+    <Civilopedia>TXT_KEY_YIELD_YIELD_COMMERCE_PEDIA</Civilopedia>
+  </Yield>
+</YieldData>

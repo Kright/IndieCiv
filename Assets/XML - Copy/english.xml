@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<LanguageTable>
+	<String Name="TXT_KEY_CIVILIZATION_ROMANS">Romans</String>
+	<String Name="TXT_KEY_CIVILIZATION_GREEKS">Greeks</String>
+	<String Name="TXT_KEY_CIVILIZATION_GERMANS">Germans</String>
+	<String Name="TXT_KEY_CIVILIZATION_CHINESE">Chinese</String>
+	<String Name="TXT_KEY_CIVILIZATION_JAPANESE">Japanese</String>
+	<String Name="TXT_KEY_CIVILIZATION_INDIANS">Indians</String>
+	<String Name="TXT_KEY_CIVILIZATION_AZTECS">Aztecs</String>
+	<String Name="TXT_KEY_CIVILIZATION_IROQUOIS">Iroquois</String>
+	<String Name="TXT_KEY_CIVILIZATION_EGYPTIANS">Egyptians</String>
+	<String Name="TXT_KEY_CIVILIZATION_BABYLONIANS">Babylonians</String>
+
+	<String Name="TXT_KEY_TERRAIN_COAST">Coast</String>
+	<String Name="TXT_KEY_TERRAIN_SEA">Sea</String>
+	<String Name="TXT_KEY_TERRAIN_OCEAN">Ocean</String>
+	<String Name="TXT_KEY_TERRAIN_GRASSLAND">Grassland</String>
+	<String Name="TXT_KEY_TERRAIN_DESERT">Desert</String>
+	<String Name="TXT_KEY_TERRAIN_PLAINS">Plains</String>
+	<String Name="TXT_KEY_TERRAIN_TUNDRA">Tundra</String>
+
+	<String Name="TXT_KEY_RELIEF_HILLS">Hills</String>
+	<String Name="TXT_KEY_RELIEF_MOUNTAINS">Mountains</String>
+  <String Name="TXT_KEY_RELIEF_VOLCANO">Volcanos</String>
+  <String Name="TXT_KEY_RELIEF_PINES_GRASSLAND">Pines Grassland</String>
+  <String Name="TXT_KEY_RELIEF_JUNGLE_GRASSLAND">Jungle Grassland</String>
+  <String Name="TXT_KEY_RELIEF_FOREST_GRASSLAND">Forest Grassland</String>
+
+  <String Name="TXT_KEY_UNIT_SETTLER">Settler</String>
+	<String Name="TXT_KEY_UNIT_WORKER">Worker</String>
+	<String Name="TXT_KEY_UNIT_SCOUT">Scout</String>
+	<String Name="TXT_KEY_UNIT_WARRIOR">Warrior</String>
+
+  <String Name="TXT_KEY_RESOURCE_HORSES">Horses</String>
+  <String Name="TXT_KEY_RESOURCE_IRON">Iron</String>
+  <String Name="TXT_KEY_RESOURCE_SALTPETER">Saltpeter</String>
+  <String Name="TXT_KEY_RESOURCE_COAL">Coal</String>
+  <String Name="TXT_KEY_RESOURCE_OIL">Oil</String>
+  <String Name="TXT_KEY_RESOURCE_RUBBER">Rubber</String>
+  <String Name="TXT_KEY_RESOURCE_ALUMINUM">Aluminum</String>
+  <String Name="TXT_KEY_RESOURCE_URANIUM">Uranium</String>
+  <String Name="TXT_KEY_RESOURCE_WINES">Wines</String>
+  <String Name="TXT_KEY_RESOURCE_FUR">Fur</String>
+  <String Name="TXT_KEY_RESOURCE_DYES">Syes</String>
+  <String Name="TXT_KEY_RESOURCE_INCENSE">Incense</String>
+  <String Name="TXT_KEY_RESOURCE_SPICES">Spices</String>
+  <String Name="TXT_KEY_RESOURCE_IVORY">Ivory</String>
+  <String Name="TXT_KEY_RESOURCE_SILKS">Silks</String>
+  <String Name="TXT_KEY_RESOURCE_GEMS">Gems</String>
+  <String Name="TXT_KEY_RESOURCE_WHALES">Whales</String>
+  <String Name="TXT_KEY_RESOURCE_GAME">Game</String>
+  <String Name="TXT_KEY_RESOURCE_FISH">Fish</String>
+  <String Name="TXT_KEY_RESOURCE_CATTLE">Cattle</String>
+  <String Name="TXT_KEY_RESOURCE_WHEAT">Wheat</String>
+  <String Name="TXT_KEY_RESOURCE_GOLD">Gold</String>
+  <String Name="TXT_KEY_RESOURCE_SUGAR">Sugar</String>
+  <String Name="TXT_KEY_RESOURCE_TROPICALFRUIT">Tropical Fruit</String>
+  <String Name="TXT_KEY_RESOURCE_OASIS">Oasis</String>
+  <String Name="TXT_KEY_RESOURCE_TOBACCO">Tobacco</String>
+
+
+  <String Name="TXT_KEY_BUILDING_HOUSING">Housing</String>
+  <String Name="TXT_KEY_BUILDING_GRANARY">Granary</String>
+
+</LanguageTable>
+

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<CityArtData>
+  <CityArt>
+    <Type>CITY_ART_ROMANS</Type>
+    <Eras>
+      <Era>
+        <Type>ERA_ANCIENT_TIMES</Type>
+        <Path>Assets/Art/Cities/Cities.pcx</Path>
+      </Era>
+      <Era>
+        <Type>ERA_MIDDLE_AGES</Type>
+        <Path>Assets/Art/Cities/Cities.pcx</Path>
+      </Era>
+    </Eras>
+  </CityArt>
+</CityArtData>

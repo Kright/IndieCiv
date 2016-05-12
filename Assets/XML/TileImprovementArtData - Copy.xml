@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TileImprovementArtData>
+	<TileImprovementArt>
+		<Type>TILE_IMPROVEMENT_ART_ROADS</Type>
+		<Path>Assets/Art/Terrain/roads.pcx</Path>
+	</TileImprovementArt>
+	<TileImprovementArt>
+		<Type>TILE_IMPROVEMENT_ART_RAILROADS</Type>
+		<Path>Assets/Art/Terrain/railroads.pcx</Path>
+	</TileImprovementArt>    
+	<TileImprovementArt>
+		<Type>TILE_IMPROVEMENT_ART_IRRIGATION</Type>
+		<Path>Assets/Art/Terrain/irrigation.pcx</Path>
+	</TileImprovementArt>    
+	<TileImprovementArt>
+		<Type>TILE_IMPROVEMENT_ART_IRRIGATION_TUNDRA</Type>
+		<Path>Assets/Art/Terrain/irrigation TUNDRA.pcx</Path>
+	</TileImprovementArt>    
+</TileImprovementArtData>

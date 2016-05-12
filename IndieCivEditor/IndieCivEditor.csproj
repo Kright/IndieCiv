@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{665E590C-2E43-4942-90B7-96C1EBC0697E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IndieCivEditor</RootNamespace>
+    <AssemblyName>IndieCivEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.4.0.456, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>..\packages\DockPanelSuite.2.10.0-beta1\lib\net40\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BIQ\BIQAdvance.cs" />
+    <Compile Include="BIQ\BIQBuilding.cs" />
+    <Compile Include="BIQ\BIQCitizen.cs" />
+    <Compile Include="BIQ\BIQCity.cs" />
+    <Compile Include="BIQ\BIQCivilization.cs" />
+    <Compile Include="BIQ\BIQColony.cs" />
+    <Compile Include="BIQ\BIQContinent.cs" />
+    <Compile Include="BIQ\BIQCulture.cs" />
+    <Compile Include="BIQ\BIQDifficulty.cs" />
+    <Compile Include="BIQ\BIQEra.cs" />
+    <Compile Include="BIQ\BIQEspionage.cs" />
+    <Compile Include="BIQ\BIQExperience.cs" />
+    <Compile Include="BIQ\BIQFlavour.cs" />
+    <Compile Include="BIQ\BIQGame.cs" />
+    <Compile Include="BIQ\BIQGameColony.cs" />
+    <Compile Include="BIQ\BIQGameUnit.cs" />
+    <Compile Include="BIQ\BIQGeneral.cs" />
+    <Compile Include="BIQ\BIQGovernment.cs" />
+    <Compile Include="BIQ\BIQHeader.cs" />
+    <Compile Include="BIQ\BIQLead.cs" />
+    <Compile Include="BIQ\BIQLoader.cs" />
+    <Compile Include="BIQ\BIQMap.cs" />
+    <Compile Include="BIQ\BIQResource.cs" />
+    <Compile Include="BIQ\BIQStartLocation.cs" />
+    <Compile Include="BIQ\BIQTerrain.cs" />
+    <Compile Include="BIQ\BIQTile.cs" />
+    <Compile Include="BIQ\BIQUnit.cs" />
+    <Compile Include="BIQ\BIQWorkerJob.cs" />
+    <Compile Include="BIQ\BIQWorldCharacteristics.cs" />
+    <Compile Include="BIQ\BIQWorldSize.cs" />
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Properties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Properties.Designer.cs">
+      <DependentUpon>Properties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RulesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RulesForm.Designer.cs">
+      <DependentUpon>RulesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphicsDeviceControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GraphicsDeviceService.cs" />
+    <Compile Include="Forms\MapViewRender.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MapView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MapView.Designer.cs">
+      <DependentUpon>MapView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IndieCivEditorApp.cs" />
+    <Compile Include="INIFileHandler.cs" />
+    <Compile Include="KeyboardControl.cs" />
+    <Compile Include="KeyboardUtil.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceContainer.cs" />
+    <Compile Include="ToolStripSpinner.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Content Include="Todo.txt" />
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MapView.resx">
+      <DependentUpon>MapView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Properties.resx">
+      <DependentUpon>Properties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RulesForm.resx">
+      <DependentUpon>RulesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Content\Content.mgcb" />
+    <Content Include="Content\TestFont.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IndieCivCore\IndieCivCore.csproj">
+      <Project>{b637b190-36dd-40b8-ae8e-6deae33b32b1}</Project>
+      <Name>IndieCivCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

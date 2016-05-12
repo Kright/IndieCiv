@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<CultureGroupData>
+	<CultureGroup>
+		<Type>CULTUREGROUP_NONE</Type>
+		<Description>TXT_KEY_CULTUREGROUP_NONE</Description>
+		<Civilopedia>TXT_KEY_CULTUREGROUP_NONE_PEDIA</Civilopedia>
+	</CultureGroup>	
+	<CultureGroup>
+		<Type>CULTUREGROUP_EUROPEAN</Type>
+		<Description>TXT_KEY_CULTUREGROUP_EUROPEAN</Description>
+		<Civilopedia>TXT_KEY_CULTUREGROUP_EUROPEAN_PEDIA</Civilopedia>
+	</CultureGroup>	
+</CultureGroupData>

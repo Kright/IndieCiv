@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B637B190-36DD-40B8-AE8E-6DEAE33B32B1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IndieCivCore</RootNamespace>
+    <AssemblyName>IndieCivCore</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.4.0.456, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BatchRendering.cs" />
+    <Compile Include="Camera.cs" />
+    <Compile Include="Entities\City.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\PlayerManager.cs" />
+    <Compile Include="Entities\Unit.cs" />
+    <Compile Include="Flc.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="GameObject.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="IMapInterface.cs" />
+    <Compile Include="IUpdateEndOfTurn.cs" />
+    <Compile Include="IndieCivCoreApp.cs" />
+    <Compile Include="Localization\Locale.cs" />
+    <Compile Include="Localization\LocaleManager.cs" />
+    <Compile Include="Map\MapCiv3.cs" />
+    <Compile Include="Map\MapManager.cs" />
+    <Compile Include="Map\MapTile.cs" />
+    <Compile Include="Map\MapTypeBase.cs" />
+    <Compile Include="Map\MapTypeHexagon.cs" />
+    <Compile Include="Map\MapTypeIsometric.cs" />
+    <Compile Include="Map\MapRendering.cs" />
+    <Compile Include="MouseState.cs" />
+    <Compile Include="Entities\Player.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ArtResource.cs" />
+    <Compile Include="Resources\CivilizationData.cs" />
+    <Compile Include="Resources\AdvanceData.cs" />
+    <Compile Include="Resources\DataGeneral.cs" />
+    <Compile Include="Resources\DataResource.cs" />
+    <Compile Include="Resources\EraData.cs" />
+    <Compile Include="Resources\GovernmentData.cs" />
+    <Compile Include="Resources\ReliefArt.cs" />
+    <Compile Include="Resources\ReliefData.cs" />
+    <Compile Include="Resources\Resource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Resources\ResourceData.cs" />
+    <Compile Include="Resources\ResourceInterface.cs" />
+    <Compile Include="Resources\ResourceLoader.cs" />
+    <Compile Include="Resources\TerrainArt.cs" />
+    <Compile Include="Resources\TerrainData.cs" />
+    <Compile Include="Resources\TurnData.cs" />
+    <Compile Include="Resources\UnitArt.cs" />
+    <Compile Include="Resources\UnitData.cs" />
+    <Compile Include="Resources\YieldData.cs" />
+    <Compile Include="Serialization\BinaryFormatter.cs" />
+    <Compile Include="Serialization\Formatter.cs" />
+    <Compile Include="Serialization\XmlFormatter.cs" />
+    <Compile Include="TypeConverters.cs" />
+    <Compile Include="UnitAnimation.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Civilization.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

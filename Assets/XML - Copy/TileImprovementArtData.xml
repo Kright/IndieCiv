@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TileImprovementArtData>
+	<TileImprovementArt>
+		<Type>TILEIMPROVEMENT_ART_ROADS</Type>
+		<Path>Assets/Art/Terrain/roads.pcx</Path>
+	</TileImprovementArt>
+</TileImprovementArtData>
