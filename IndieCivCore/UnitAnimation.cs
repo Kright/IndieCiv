@@ -22,6 +22,8 @@ namespace IndieCivCore {
 
         public MapTile.NeighbouringDirections AnimDirection { get; set; }
 
+        public UnitAnimation.EAnimStates AnimState { get; set; }
+
         public void Start(MapTile.NeighbouringDirections Direction) {
             AnimDirection = Direction;
             CurrentFrame = StartFrame = AnimDirection * CurrentFlc.Civ3Header.animLength;
@@ -60,8 +62,13 @@ namespace IndieCivCore {
 
         }
 
-        public void PlayAnimation() {
+        public void PlayAnimation ( UnitAnimation.EAnimStates animState, MapTile.NeighbouringDirections direction, IndieCivCore.Resources.UnitData unitData ) {
+            AnimState = animState;
 
+            switch ( AnimState ) {
+                case EAnimStates.EAnimState_Default:
+
+            }
         }
     }
 }

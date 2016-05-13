@@ -11,8 +11,18 @@ using IndieCivCore.Map;
 
 namespace IndieCivCore.Entities {
     public class Unit : Entity, IMapInterface {
+        public enum EUnitStates {
+            EUnitState_Idle             = 0,
+            EUnitState_Automate         = (1 << 0),
+            EUnitState_Explore          = (1 << 1),
+            EUnitState_Building         = (1 << 2),
+            EUnitState_TileImprovement  = (1 << 3),
+            EUnitState_Moving           = (1 << 4),
+        }
+
         public int NumMoves { get; set; }
         public bool Active { get; set; }
+        private float FrameCount { get; set; }
 
         public MapTile MapTile { get; set; }
 
@@ -20,7 +30,9 @@ namespace IndieCivCore.Entities {
         public UnitData UnitData { get; set; }
         public UnitAnimation UnitAnimation { get; set; }
 
-        Vector2 Position { get; set; }
+        public EUnitStates UnitStates { get; set; }
+
+        Vector2 Position
 
         public Unit(UnitData UnitData, MapTile MapTile) {
             this.UnitData = UnitData;
@@ -38,7 +50,7 @@ namespace IndieCivCore.Entities {
 
             if (Active == true) {
 
-                FrameCount += Delta;
+                FrameCount += (float)IndieCivCoreApp.gameTime.ElapsedGameTime.TotalSeconds;
                 if (FrameCount >= 1.0f)
                     FrameCount = 0;
             }
@@ -46,13 +58,13 @@ namespace IndieCivCore.Entities {
         }
 
         public override void Render() {
-            if (UnitState & EUnitState_Moving) {
+            if ( ( UnitStates & EUnitStates.EUnitState_Moving ) == EUnitStates.EUnitState_Moving ) {
                 UnitAnimation.Render(Position);
             }
             else {
 
-                Position.X = MapTile.ScreenXPos;
-                Position.Y = MapTile.ScreenYPos;
+                this.Position.X = MapTile.ScreenXPos;
+                this.Position.Y = MapTile.ScreenYPos;
 
                 if (Active == true) {
                     if (FrameCount >= 0 && FrameCount <= 0.8f) {

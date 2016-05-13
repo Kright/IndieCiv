@@ -74,7 +74,7 @@ namespace IndieCivCore
             return Player;
         }
 
-		public void Update(GameTime game_time, KeyboardState state)
+		public void Update()
 		{
 			MapManager.Update();
 
@@ -82,12 +82,12 @@ namespace IndieCivCore
                 SelectedPlayer.Update();
 
                 if (SelectedPlayer.IsAI == true) {
-                    if (state.IsKeyDown(Keys.Enter) && SelectedPlayer.ActiveUnitsLeft() == false) {
+                    if (IndieCivCoreApp.keyboardState.IsKeyDown(Keys.Enter) && SelectedPlayer.ActiveUnitsLeft() == false) {
                         UpdateEndOfTurn();
                     }
                 }
                 else {
-                    if (state.IsKeyDown(Keys.Enter) && SelectedPlayer.ActiveUnitsLeft() == false) {
+                    if (IndieCivCoreApp.keyboardState.IsKeyDown(Keys.Enter) && SelectedPlayer.ActiveUnitsLeft() == false) {
                         UpdateEndOfTurn();
                     }
                 }

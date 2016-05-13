@@ -24,6 +24,10 @@ namespace IndieCivCore {
         public static EExecutionEnvironment EEnvironmentEnvironment { get; set; }
         public static EExecutionState EExecutionState { get; set; }
 
+        public static GameTime gameTime { get; set; }
+        public static KeyboardState keyboardState { get; set; }
+
+
         public static void Init(EExecutionEnvironment EEnvironmentMode) {
             EExecutionState = EExecutionState.Stopped;
 
@@ -37,10 +41,12 @@ namespace IndieCivCore {
         }
 
         public static void Update(GameTime game_time, KeyboardState state) {
-            Game.Instance.Update(game_time, state);
+            gameTime = game_time;
+            keyboardState = state;
+            Game.Instance.Update();
         }
 
-        public static void Render(GameTime game_time) {
+        public static void Render() {
             Game.Instance.Render();
         }
     }
