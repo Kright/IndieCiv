@@ -32,7 +32,7 @@ namespace IndieCivCore.Entities {
 
         public EUnitStates UnitStates { get; set; }
 
-        Vector2 Position
+        Vector2 Position;
 
         public Unit(UnitData UnitData, MapTile MapTile) {
             this.UnitData = UnitData;

@@ -24,7 +24,14 @@ namespace IndieCivCore.Resources {
 
         public UnitArt UnitArt { get; set; }
 
-        public GetUnitAnimation() {
+        public Flc GetUnitAnimation(string type) {
+
+            UnitArt unitArt = ResourceInterface.UnitArtData.Find(x => x.Type == type);
+
+            if (UnitArt == null)
+                return null;
+
+            return UnitArt.getUnitFlc();
 
         }
     }
