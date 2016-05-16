@@ -23,5 +23,9 @@ namespace IndieCivCore.Resources {
         public long AIStrategies { get; set; }
 
         public UnitArt UnitArt { get; set; }
+
+        public GetUnitAnimation() {
+
+        }
     }
 }

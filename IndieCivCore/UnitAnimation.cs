@@ -67,8 +67,13 @@ namespace IndieCivCore {
 
             switch ( AnimState ) {
                 case EAnimStates.EAnimState_Default:
+                    this.CurrentFlc = unitData.GetUnitAnimation("UNIT_ART_DEFAULT");
+                    break;
 
             }
+
+            if (this.CurrentFlc)
+                this.CurrentFlc.Start(direction);
         }
     }
 }

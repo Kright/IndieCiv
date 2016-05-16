@@ -17,7 +17,7 @@ namespace IndieCivCore.Resources {
         public static void LoadArt() {
             ResourceInterface.TerrainArtData = XmlFormatter.Load<List<TerrainArt>>("TerrainArtData");
             ResourceInterface.ReliefArtData = XmlFormatter.Load<List<ReliefArt>>("ReliefArtData");
-            //ResourceInterface.UnitArtData = XmlFormatter.Load<List<UnitArt>>("UnitArtData");
+            ResourceInterface.UnitArtData = XmlFormatter.Load<List<UnitArt>>("UnitArtData");
         }
     }
 }
