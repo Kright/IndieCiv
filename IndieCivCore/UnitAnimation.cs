@@ -19,6 +19,10 @@ namespace IndieCivCore {
 
         public int CurrentFrame { get; set; }
         public int StartFrame { get; set; }
+        public int EndFrame { get; set; }
+        public float Speed { get; set; }
+
+        public Flc CurrentFlc { get; set; }
 
         public MapTile.NeighbouringDirections AnimDirection { get; set; }
 
@@ -28,14 +32,14 @@ namespace IndieCivCore {
             AnimDirection = Direction;
             CurrentFrame = StartFrame = AnimDirection * CurrentFlc.Civ3Header.animLength;
 
-            EndFrame = (AnimDirection * CurrrentFlc.Civ3Header.animLength) + CurrrentFlc.Civ3Header.animLength - 1;
+            EndFrame = (AnimDirection * CurrentFlc.Civ3Header.animLength) + CurrentFlc.Civ3Header.animLength - 1;
 
             Speed = (float)CurrentFlc.FlcHeader.speed;
         }
 
         public bool Update() {
 
-            Speed -= Delta * 1000.0f;
+            Speed -= IndieCivCoreApp.gameTime.TotalGameTime.Seconds * 1000.0f;
 
             if (Speed < 0.0f) {
                 Speed = CurrentFlc.FlcHeader.speed;
@@ -46,7 +50,7 @@ namespace IndieCivCore {
             return false;
         }
 
-        public void Render() {
+        public void Render(Vector2 position) {
             if (this.CurrentFlc == null)
                 return;
 
@@ -58,6 +62,8 @@ namespace IndieCivCore {
 
             if ( CurrentTexture == null )
                 CurrentTexture = CurrentFlc.GetTexture(this->CurrentFrame);
+
+
 
 
         }
