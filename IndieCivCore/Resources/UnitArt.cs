@@ -37,7 +37,9 @@ namespace IndieCivCore.Resources {
         }
 
         public Flc GetUnitFlc(string type) {
-            UnitFlc.Find(x => x.Type == type)
+            //UnitFlc.Find(x => x.Type == type)
+
+            return null;
         }
     }
 }

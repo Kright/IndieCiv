@@ -31,7 +31,7 @@ namespace IndieCivCore.Resources {
             if (UnitArt == null)
                 return null;
 
-            return UnitArt.getUnitFlc();
+            return null;// UnitArt.getUnitFlc();
 
         }
     }

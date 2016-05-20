@@ -83,7 +83,7 @@ namespace IndieCivEditor
 
             IndieCivEditorApp.Update(game_time);
 
-            IndieCivEditorApp.Render(game_time);
+            IndieCivEditorApp.Render();
 
             sprite_batch.Begin();
 

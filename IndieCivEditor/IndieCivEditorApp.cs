@@ -88,8 +88,8 @@ namespace IndieCivEditor
             IndieCivCore.IndieCivCoreApp.Update(game_time, state);
         }
 
-        public static void Render(GameTime game_time) {
-            IndieCivCore.IndieCivCoreApp.Render(game_time);
+        public static void Render() {
+            IndieCivCore.IndieCivCoreApp.Render();
         }
     }
 }

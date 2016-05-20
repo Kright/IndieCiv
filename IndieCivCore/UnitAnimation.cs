@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
 using IndieCivCore.Map;
 
 namespace IndieCivCore {
@@ -22,6 +25,8 @@ namespace IndieCivCore {
         public int EndFrame { get; set; }
         public float Speed { get; set; }
 
+        public Texture2D CurrentTexture;
+
         public Flc CurrentFlc { get; set; }
 
         public MapTile.NeighbouringDirections AnimDirection { get; set; }
@@ -30,9 +35,9 @@ namespace IndieCivCore {
 
         public void Start(MapTile.NeighbouringDirections Direction) {
             AnimDirection = Direction;
-            CurrentFrame = StartFrame = AnimDirection * CurrentFlc.Civ3Header.animLength;
+            CurrentFrame = StartFrame = (int)AnimDirection * CurrentFlc.Civ3Header.animLength;
 
-            EndFrame = (AnimDirection * CurrentFlc.Civ3Header.animLength) + CurrentFlc.Civ3Header.animLength - 1;
+            EndFrame = ((int)AnimDirection * CurrentFlc.Civ3Header.animLength) + CurrentFlc.Civ3Header.animLength - 1;
 
             Speed = (float)CurrentFlc.FlcHeader.speed;
         }
@@ -54,14 +59,14 @@ namespace IndieCivCore {
             if (this.CurrentFlc == null)
                 return;
 
-            x = (x) - (240 / 2) + this.CurrentFlc.Civ3Header.xOffset;
-            y = (y) - (240 / 2) + this.CurrentFlc.Civ3Header.yOffset;
+            int x = ((int)position.X) - (240 / 2) + this.CurrentFlc.Civ3Header.xOffset;
+            int y = ((int)position.Y) - (240 / 2) + this.CurrentFlc.Civ3Header.yOffset;
 
             int Width = this.CurrentFlc.FlcHeader.width;
             int Height = this.CurrentFlc.FlcHeader.height;
 
             if ( CurrentTexture == null )
-                CurrentTexture = CurrentFlc.GetTexture(this->CurrentFrame);
+                CurrentTexture = CurrentFlc.GetTexture(this.CurrentFrame);
 
 
 
@@ -78,8 +83,8 @@ namespace IndieCivCore {
 
             }
 
-            if (this.CurrentFlc)
-                this.CurrentFlc.Start(direction);
+            //if ( this.CurrentFlc != null )
+              //  this.CurrentFlc.Start(direction);
         }
     }
 }
