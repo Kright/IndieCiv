@@ -82,9 +82,9 @@ namespace IndieCivEditor.BIQ
 
         static public void Load( BinaryFormatter formatter )
         {
-            CitySizeLevelName1 = formatter.ReadChars((int)BIQGeneralSizes.CitySizeLevelName1);
-            CitySizeLevelName2 = formatter.ReadChars((int)BIQGeneralSizes.CitySizeLevelName2);
-            CitySizeLevelName3 = formatter.ReadChars((int)BIQGeneralSizes.CitySizeLevelName3);
+            CitySizeLevelName1 = formatter.ReadString((int)BIQGeneralSizes.CitySizeLevelName1);
+            CitySizeLevelName2 = formatter.ReadString((int)BIQGeneralSizes.CitySizeLevelName2);
+            CitySizeLevelName3 = formatter.ReadString((int)BIQGeneralSizes.CitySizeLevelName3);
 
             NumSpaceShipParts = formatter.ReadInt32();
 
@@ -140,7 +140,7 @@ namespace IndieCivEditor.BIQ
 
 	        CultureNames = new List<string>();
 	        for ( int i = 0; i < NumCultureLevels; i++ )
-                CultureNames.Add ( formatter.ReadChars(64));
+                CultureNames.Add ( formatter.ReadString(64));
 
 
 	        BorderExpansionMultiplier = formatter.ReadInt32();

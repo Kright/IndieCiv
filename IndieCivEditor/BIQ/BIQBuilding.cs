@@ -58,9 +58,9 @@ namespace IndieCivEditor.BIQ
 
         public void Load( BinaryFormatter formatter )
         {
-            Description = formatter.ReadChars( ( int ) BIQBuildingSizes.Description );
-            Name = formatter.ReadChars( ( int ) BIQBuildingSizes.Name );
-            Civlopedia = formatter.ReadChars( ( int ) BIQBuildingSizes.Civlopedia );
+            Description = formatter.ReadString( ( int ) BIQBuildingSizes.Description );
+            Name = formatter.ReadString( ( int ) BIQBuildingSizes.Name );
+            Civlopedia = formatter.ReadString( ( int ) BIQBuildingSizes.Civlopedia );
 
             DoublesHappinessOf = formatter.ReadInt32();
             GainInEveryCity = formatter.ReadInt32();

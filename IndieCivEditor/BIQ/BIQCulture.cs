@@ -37,7 +37,7 @@ namespace IndieCivEditor.BIQ
 
         public void Load( BinaryFormatter formatter )
         {
-            CultureOpinionName = formatter.ReadChars( ( int ) BIQCultureSizes.CultureName );
+            CultureOpinionName = formatter.ReadString( ( int ) BIQCultureSizes.CultureName );
             ChanceOfSuccessfulPropaganda = formatter.ReadInt32();
             CultureRatioPercentage = formatter.ReadInt32();
             CultureRatioDenominator = formatter.ReadInt32();

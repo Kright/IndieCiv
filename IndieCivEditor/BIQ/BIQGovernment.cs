@@ -123,16 +123,16 @@ namespace IndieCivEditor.BIQ
             StandardTilePenalty = formatter.ReadInt32();
             StandardTradeBonus = formatter.ReadInt32();
 
-		    GovernmentName = formatter.ReadChars((int)BIQGovernmentSizes.GovernmentName);
-            CivilopediaEntry = formatter.ReadChars((int)BIQGovernmentSizes.CivilopediaEntry);
-            MaleRulerTitle1 = formatter.ReadChars((int)BIQGovernmentSizes.MaleRulerTitle1);
-            FemaleRulerTitle1 = formatter.ReadChars((int)BIQGovernmentSizes.FemaleRulerTitle1);
-            MaleRulerTitle2 = formatter.ReadChars((int)BIQGovernmentSizes.MaleRulerTitle2);
-            FemaleRulerTitle2 = formatter.ReadChars((int)BIQGovernmentSizes.FemaleRulerTitle2);
-            MaleRulerTitle3 = formatter.ReadChars((int)BIQGovernmentSizes.MaleRulerTitle3);
-            FemaleRulerTitle3 = formatter.ReadChars((int)BIQGovernmentSizes.FemaleRulerTitle3);
-            MaleRulerTitle4 = formatter.ReadChars((int)BIQGovernmentSizes.MaleRulerTitle4);
-            FemaleRulerTitle4 = formatter.ReadChars((int)BIQGovernmentSizes.FemaleRulerTitle4);
+		    GovernmentName = formatter.ReadString((int)BIQGovernmentSizes.GovernmentName);
+            CivilopediaEntry = formatter.ReadString((int)BIQGovernmentSizes.CivilopediaEntry);
+            MaleRulerTitle1 = formatter.ReadString((int)BIQGovernmentSizes.MaleRulerTitle1);
+            FemaleRulerTitle1 = formatter.ReadString((int)BIQGovernmentSizes.FemaleRulerTitle1);
+            MaleRulerTitle2 = formatter.ReadString((int)BIQGovernmentSizes.MaleRulerTitle2);
+            FemaleRulerTitle2 = formatter.ReadString((int)BIQGovernmentSizes.FemaleRulerTitle2);
+            MaleRulerTitle3 = formatter.ReadString((int)BIQGovernmentSizes.MaleRulerTitle3);
+            FemaleRulerTitle3 = formatter.ReadString((int)BIQGovernmentSizes.FemaleRulerTitle3);
+            MaleRulerTitle4 = formatter.ReadString((int)BIQGovernmentSizes.MaleRulerTitle4);
+            FemaleRulerTitle4 = formatter.ReadString((int)BIQGovernmentSizes.FemaleRulerTitle4);
 
             CorruptionAndWaste = formatter.ReadInt32();
             ImmuneTo = formatter.ReadInt32();

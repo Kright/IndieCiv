@@ -45,9 +45,9 @@ namespace IndieCivEditor.BIQ
         public void Load( BinaryFormatter formatter )
         {
             DefaultCitizen      = formatter.ReadInt32();
-            SingularCitizens    = formatter.ReadChars( ( int ) BIQCitizenSizes.Singular );
-            CivilopediaEntry    = formatter.ReadChars( ( int ) BIQCitizenSizes.Civlopedia );
-            PluralName = formatter.ReadChars( ( int ) BIQCitizenSizes.Plural );
+            SingularCitizens    = formatter.ReadString( ( int ) BIQCitizenSizes.Singular );
+            CivilopediaEntry    = formatter.ReadString( ( int ) BIQCitizenSizes.Civlopedia );
+            PluralName = formatter.ReadString( ( int ) BIQCitizenSizes.Plural );
             Prerequisite = formatter.ReadInt32();
             Luxuries = formatter.ReadInt32();
             Research = formatter.ReadInt32();

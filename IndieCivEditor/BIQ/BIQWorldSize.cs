@@ -30,8 +30,8 @@ namespace IndieCivEditor.BIQ
         {
             OptimalNumberOfCities = formatter.ReadInt32();
             TechRate = formatter.ReadInt32();
-            Empty = formatter.ReadChars( ( int ) BIQWorldSizeSizes.Empty );
-            Name = formatter.ReadChars( ( int ) BIQWorldSizeSizes.Name );
+            Empty = formatter.ReadString( ( int ) BIQWorldSizeSizes.Empty );
+            Name = formatter.ReadString( ( int ) BIQWorldSizeSizes.Name );
 
             Height = formatter.ReadInt32();
             DistanceBetweenCivs = formatter.ReadInt32();

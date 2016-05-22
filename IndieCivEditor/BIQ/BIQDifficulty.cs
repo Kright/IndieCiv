@@ -52,7 +52,7 @@ namespace IndieCivEditor.BIQ
 
         public void Load( BinaryFormatter formatter )
         {
-            DifficultyLevelName = formatter.ReadChars( ( int ) BIQDifficultySizes.DifficultyName );
+            DifficultyLevelName = formatter.ReadString( ( int ) BIQDifficultySizes.DifficultyName );
             NumberOfCitizensBornContent = formatter.ReadInt32();
             MaxGovernmentTransitionTime = formatter.ReadInt32();
             NumberOfDefensiveLandUnitsAIStartsWith = formatter.ReadInt32();

@@ -34,9 +34,9 @@ namespace IndieCivEditor.BIQ
 
         public void Load( BinaryFormatter formatter )
         {
-            Description = formatter.ReadChars((int)BIQEspionageSizes.Description);
-            DiplomatSpyMissionName = formatter.ReadChars((int)BIQEspionageSizes.DiplomatSpyMissionName);
-            CivilopediaEntry = formatter.ReadChars((int)BIQEspionageSizes.CivilopediaEntry);
+            Description = formatter.ReadString((int)BIQEspionageSizes.Description);
+            DiplomatSpyMissionName = formatter.ReadString((int)BIQEspionageSizes.DiplomatSpyMissionName);
+            CivilopediaEntry = formatter.ReadString((int)BIQEspionageSizes.CivilopediaEntry);
             MissionPerformedBy = formatter.ReadInt32();
             BaseCost = formatter.ReadInt32();
         }

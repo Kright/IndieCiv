@@ -35,8 +35,8 @@ namespace IndieCivEditor.BIQ
 
         public void Load( BinaryFormatter formatter )
         {
-		    AdvanceName = formatter.ReadChars((int)BIQAdvanceSizes.AdvanceName);
-		    CivilopediaEntry = formatter.ReadChars((int)BIQAdvanceSizes.CivilopediaEntry);
+		    AdvanceName = formatter.ReadString((int)BIQAdvanceSizes.AdvanceName);
+		    CivilopediaEntry = formatter.ReadString((int)BIQAdvanceSizes.CivilopediaEntry);
 		    Cost = formatter.ReadInt32();
 		    Era = formatter.ReadInt32();
 		    Icon = formatter.ReadInt32();

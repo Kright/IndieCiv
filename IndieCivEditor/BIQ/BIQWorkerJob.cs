@@ -26,14 +26,14 @@ namespace IndieCivEditor.BIQ
 
         public void Load( BinaryFormatter formatter )
         {
-            WorkerName = formatter.ReadChars( ( int ) BIQWorkerJobSizes.WorkerName );
-            CivilopediaEntry = formatter.ReadChars( ( int ) BIQWorkerJobSizes.CivilopediaEntry );
+            WorkerName = formatter.ReadString( ( int ) BIQWorkerJobSizes.WorkerName );
+            CivilopediaEntry = formatter.ReadString( ( int ) BIQWorkerJobSizes.CivilopediaEntry );
 
             Turns = formatter.ReadInt32();
             Required = formatter.ReadInt32();
             RequireResource1 = formatter.ReadInt32();
             RequireResource2 = formatter.ReadInt32();
-            Order = formatter.ReadChars( ( int ) BIQWorkerJobSizes.Order );
+            Order = formatter.ReadString( ( int ) BIQWorkerJobSizes.Order );
         }
     }
 }

@@ -50,7 +50,7 @@ namespace IndieCivEditor.BIQ
         {
             CustomCivData = formatter.ReadInt32();
             HumanPlayer = formatter.ReadInt32();
-            LeaderName = formatter.ReadChars((int)BIQLeadSizes.LeaderName);
+            LeaderName = formatter.ReadString((int)BIQLeadSizes.LeaderName);
             Unknown1 = formatter.ReadInt32();
             Unknown2 = formatter.ReadInt32();
 

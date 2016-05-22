@@ -115,26 +115,26 @@ namespace IndieCivEditor.BIQ
             NumCityNames = formatter.ReadInt32();
             CityNames = new List<string>();
             for ( int i = 0; i < NumCityNames; i++ )
-                CityNames.Add( formatter.ReadChars( ( int ) BIQCivilizationSizes.CityName ) );
+                CityNames.Add( formatter.ReadString( ( int ) BIQCivilizationSizes.CityName ) );
 
             NumLeaders = formatter.ReadInt32();
             LeaderNames = new List<string>();
             for ( int i = 0; i < NumLeaders; i++ )
-                LeaderNames.Add( formatter.ReadChars( ( int ) BIQCivilizationSizes.LeaderNames ) );
+                LeaderNames.Add( formatter.ReadString( ( int ) BIQCivilizationSizes.LeaderNames ) );
 
-		    LeaderName = formatter.ReadChars( ( int ) BIQCivilizationSizes.LeaderName );
-		    LeaderTitle = formatter.ReadChars( ( int ) BIQCivilizationSizes.LeaderTitle );
-		    CivilopediaEntry = formatter.ReadChars( ( int ) BIQCivilizationSizes.CivilopediaEntry );
-		    Adjective = formatter.ReadChars( ( int ) BIQCivilizationSizes.Adjective );
-		    CivilizationName = formatter.ReadChars( ( int ) BIQCivilizationSizes.CivilizationName );
-            Noun = formatter.ReadChars( ( int ) BIQCivilizationSizes.Noun );
+		    LeaderName = formatter.ReadString( ( int ) BIQCivilizationSizes.LeaderName );
+		    LeaderTitle = formatter.ReadString( ( int ) BIQCivilizationSizes.LeaderTitle );
+		    CivilopediaEntry = formatter.ReadString( ( int ) BIQCivilizationSizes.CivilopediaEntry );
+		    Adjective = formatter.ReadString( ( int ) BIQCivilizationSizes.Adjective );
+		    CivilizationName = formatter.ReadString( ( int ) BIQCivilizationSizes.CivilizationName );
+            Noun = formatter.ReadString( ( int ) BIQCivilizationSizes.Noun );
 
             Forward = new List<string>();
             for ( int c = 0; c < 4; c++ )
-                Forward.Add( formatter.ReadChars( ( int ) BIQCivilizationSizes.Forward ) );
+                Forward.Add( formatter.ReadString( ( int ) BIQCivilizationSizes.Forward ) );
             Reverse = new List<string>();
             for ( int c = 0; c < 4; c++ )
-                Reverse.Add( formatter.ReadChars( ( int ) BIQCivilizationSizes.Reverse ) );
+                Reverse.Add( formatter.ReadString( ( int ) BIQCivilizationSizes.Reverse ) );
 
 		    CultureGroup = formatter.ReadInt32();
 		    LeaderGender = formatter.ReadInt32();
@@ -163,7 +163,7 @@ namespace IndieCivEditor.BIQ
 
             ScientificLeaderName = new List<string>();
             for ( int i = 0; i < NumScientificLeaders; i++ )
-                ScientificLeaderName.Add( formatter.ReadChars( ( int ) BIQCivilizationSizes.ScientificLeaderName ) );
+                ScientificLeaderName.Add( formatter.ReadString( ( int ) BIQCivilizationSizes.ScientificLeaderName ) );
         }
 
         public void Import() {

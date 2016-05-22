@@ -44,8 +44,8 @@ namespace IndieCivEditor.BIQ
 
         public void Load( BinaryFormatter formatter )
         {
-            Name = formatter.ReadChars( ( int ) BIQResourceSizes.Name );
-            CivilopediaEntry = formatter.ReadChars( ( int ) BIQResourceSizes.Civlopedia );
+            Name = formatter.ReadString( ( int ) BIQResourceSizes.Name );
+            CivilopediaEntry = formatter.ReadString( ( int ) BIQResourceSizes.Civlopedia );
             Type = formatter.ReadInt32();
             AppearanceRatio = formatter.ReadInt32();
             DisappearanceProbability = formatter.ReadInt32();

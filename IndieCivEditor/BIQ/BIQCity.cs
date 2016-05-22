@@ -34,7 +34,7 @@ namespace IndieCivEditor.BIQ
         {
             HasWalls = formatter.ReadByte();
             HasPalace = formatter.ReadByte();
-            Name = formatter.ReadChars((int)BIQCitySizes.Name);
+            Name = formatter.ReadString((int)BIQCitySizes.Name);
             OwnerType = formatter.ReadInt32();
             NumBuildings = formatter.ReadInt32();
 

@@ -24,7 +24,7 @@ namespace IndieCivEditor.BIQ
         public void Load ( BinaryFormatter formatter )
         {
             Unknown1 = formatter.ReadInt32();
-            Name = formatter.ReadChars( ( int ) BIQFlavourSizes.Name );
+            Name = formatter.ReadString( ( int ) BIQFlavourSizes.Name );
 
             RelationWithOtherFlavor = new List<int>();
 

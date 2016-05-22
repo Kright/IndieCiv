@@ -29,7 +29,7 @@ namespace IndieCivEditor.BIQ
 
         public void Load ( BinaryFormatter formatter )
         {
-            //Name = formatter.ReadChars( ( int ) BIQGameColonySizes.Name );
+            //Name = formatter.ReadString( ( int ) BIQGameColonySizes.Name );
             OwnerType = formatter.ReadInt32();
             //ExperienceLevel = formatter.ReadInt32();
             Owner = formatter.ReadInt32();
@@ -37,7 +37,7 @@ namespace IndieCivEditor.BIQ
             //AIStrategy = formatter.ReadInt32();
             X = formatter.ReadInt32();
             Y = formatter.ReadInt32();
-            //PTWCustomName = formatter.ReadChars( ( int ) BIQGameColonySizes.PTWCustomName );
+            //PTWCustomName = formatter.ReadString( ( int ) BIQGameColonySizes.PTWCustomName );
             //UseCivilizationKing = formatter.ReadInt32();
 
             ImprovementType = formatter.ReadInt32();

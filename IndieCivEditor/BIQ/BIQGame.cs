@@ -125,7 +125,7 @@ namespace IndieCivEditor.BIQ
             for ( int i = 0; i < 7; i++ )
                 TimeUnitsPerTurn.Add( formatter.ReadInt32() );
 
-            ScenarioSearchFolders = formatter.ReadChars( ( int ) BIQGameSizes.ScenarioSearchFolders );
+            ScenarioSearchFolders = formatter.ReadString( ( int ) BIQGameSizes.ScenarioSearchFolders );
 
             CivPartOfWhichAlliance = new List<int>();
             for ( int i = 0; i < NumberOfPlayableCivs; i++ )
@@ -149,11 +149,11 @@ namespace IndieCivEditor.BIQ
             Unknown1 = formatter.ReadInt32();
             Unknown2 = formatter.ReadByte();
 
-            Alliance0 = formatter.ReadChars( ( int ) BIQGameSizes.Alliance0 );
-            Alliance1 = formatter.ReadChars( ( int ) BIQGameSizes.Alliance1 );
-            Alliance2 = formatter.ReadChars( ( int ) BIQGameSizes.Alliance2 );
-            Alliance3 = formatter.ReadChars( ( int ) BIQGameSizes.Alliance3 );
-            Alliance4 = formatter.ReadChars( ( int ) BIQGameSizes.Alliance4 );
+            Alliance0 = formatter.ReadString( ( int ) BIQGameSizes.Alliance0 );
+            Alliance1 = formatter.ReadString( ( int ) BIQGameSizes.Alliance1 );
+            Alliance2 = formatter.ReadString( ( int ) BIQGameSizes.Alliance2 );
+            Alliance3 = formatter.ReadString( ( int ) BIQGameSizes.Alliance3 );
+            Alliance4 = formatter.ReadString( ( int ) BIQGameSizes.Alliance4 );
 
 
             warWith0 = new List<int>();
@@ -172,7 +172,7 @@ namespace IndieCivEditor.BIQ
 
             AllianceVictoryType = formatter.ReadInt32();
 
-            PlaugeName = formatter.ReadChars( ( int ) BIQGameSizes.PlaugeName );
+            PlaugeName = formatter.ReadString( ( int ) BIQGameSizes.PlaugeName );
             PermitPlagues = formatter.ReadByte();
             PlagueEarliestStart = formatter.ReadInt32();
             PlagueVariation = formatter.ReadInt32();
@@ -181,7 +181,7 @@ namespace IndieCivEditor.BIQ
             PlagueGracePeriod = formatter.ReadInt32();
             PlagueMaxOccurance = formatter.ReadInt32();
             Unknown3 = formatter.ReadInt32();
-            Unknown4 = formatter.ReadChars( ( int ) BIQGameSizes.Unknown4 );
+            Unknown4 = formatter.ReadString( ( int ) BIQGameSizes.Unknown4 );
             RespawnFlagUnits = formatter.ReadInt32();
             CaptureAnyFlag = formatter.ReadByte();
             GoldForCapture = formatter.ReadInt32();

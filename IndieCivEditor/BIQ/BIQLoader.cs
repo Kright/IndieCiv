@@ -124,7 +124,7 @@ namespace IndieCivEditor.BIQ
                     return false;
 
                 CustomRules = false;
-                string NextSection = Formatter.ReadChars( 4 );
+                string NextSection = Formatter.ReadString( 4 );
                 if ( NextSection.Contains( "BLDG" ) == true )
                 {
                     CustomRules = true;
@@ -147,7 +147,7 @@ namespace IndieCivEditor.BIQ
                     this.LoadWorldSizes();
                     this.LoadFlavors();
 
-                    NextSection = Formatter.ReadChars( 4 );
+                    NextSection = Formatter.ReadString( 4 );
                 }
                 if ( NextSection.Contains( "WCHR" ) == true )
                 {
@@ -164,19 +164,19 @@ namespace IndieCivEditor.BIQ
                     this.LoadGameUnits();
                     this.LoadColonies();
 
-                    NextSection = Formatter.ReadChars( 4 );
+                    NextSection = Formatter.ReadString( 4 );
                 }
                 if ( NextSection.Contains( "GAME" ) == true )
                 {
                     this.LoadGame();
 
-                    NextSection = Formatter.ReadChars(4);
+                    NextSection = Formatter.ReadString(4);
                 }
                 if (NextSection.Contains("LEAD") == true)
                 {
                     this.LoadLead();
 
-                    NextSection = Formatter.ReadChars(4);
+                    NextSection = Formatter.ReadString(4);
                 }
 				if ( Formatter.EOF() == true )
 				{
@@ -286,7 +286,7 @@ namespace IndieCivEditor.BIQ
                 }
                 else if ( pair.Value.Item1 == DataType.String )
                 {
-                    string sValue = Formatter.ReadChars( pair.Value.Item3 );
+                    string sValue = Formatter.ReadString( pair.Value.Item3 );
                     property.SetValue( obj, sValue, null );
                 }
                 else if ( pair.Value.Item1 == DataType.LoopCounter )
@@ -366,7 +366,7 @@ namespace IndieCivEditor.BIQ
 
         private void LoadColonies()
         {
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             int iNumGameColonies = Formatter.ReadInt32();
             GameColonies = new List<BIQGameColony>();
@@ -383,7 +383,7 @@ namespace IndieCivEditor.BIQ
 
         private void LoadGameUnits()
         {
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             int iNumGameUnits = Formatter.ReadInt32();
             GameUnits = new List<BIQGameUnit>();
@@ -400,7 +400,7 @@ namespace IndieCivEditor.BIQ
 
         private void LoadCities()
         {
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             int iNumCities = Formatter.ReadInt32();
             Cities = new List<BIQCity>();
@@ -417,7 +417,7 @@ namespace IndieCivEditor.BIQ
 
         private void LoadStartLocations()
         {
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             int iNumStartLocations = Formatter.ReadInt32();
             StartLocations = new List<BIQStartLocation>();
@@ -434,7 +434,7 @@ namespace IndieCivEditor.BIQ
 
         private void LoadContinents()
         {
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             int iNumContinents = Formatter.ReadInt32();
             Continents = new List<BIQContinent>();
@@ -451,7 +451,7 @@ namespace IndieCivEditor.BIQ
 
         private void LoadMap()
         {
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
             // Num of maps
             Formatter.ReadInt32();
             // Size
@@ -484,7 +484,7 @@ namespace IndieCivEditor.BIQ
         {
             Flavours = new List<BIQFlavour>();
 
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             // Number of flavour groups(1)
             Formatter.ReadInt32();
@@ -507,7 +507,7 @@ namespace IndieCivEditor.BIQ
         {
             WorldSizes = new List<BIQWorldSize>();
 
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             // Read the number of units
             int iNumWorldSizes = Formatter.ReadInt32();
@@ -527,7 +527,7 @@ namespace IndieCivEditor.BIQ
         {
             Terrains = new List<BIQTerrain>();
 
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             // Read the number of units
             int iNumTerrain = Formatter.ReadInt32();
@@ -547,7 +547,7 @@ namespace IndieCivEditor.BIQ
         {
             WorkerJobs = new List<BIQWorkerJob>();
 
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             // Read the number of units
             int iNumWorkerJobs = Formatter.ReadInt32();
@@ -567,7 +567,7 @@ namespace IndieCivEditor.BIQ
         {
             Advances = new List<BIQAdvance>();
 
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             // Read the number of units
             int iNumAdvance = Formatter.ReadInt32();
@@ -587,7 +587,7 @@ namespace IndieCivEditor.BIQ
         {
             Civilizations = new List<BIQCivilization>();
 
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             // Read the number of units
             int iNumCivilizations = Formatter.ReadInt32();
@@ -607,7 +607,7 @@ namespace IndieCivEditor.BIQ
         {
             Units = new List<BIQUnit>();
 
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             // Read the number of units
             int iNumUnits = Formatter.ReadInt32();
@@ -625,7 +625,7 @@ namespace IndieCivEditor.BIQ
 
         private void LoadGeneral()
         {
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
             // Num
             Formatter.ReadInt32();
             // Size
@@ -637,7 +637,7 @@ namespace IndieCivEditor.BIQ
         {
             Governments = new List<BIQGovernment>();
 
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             // Read the number of governments
             int iNumGovernments = Formatter.ReadInt32();
@@ -657,7 +657,7 @@ namespace IndieCivEditor.BIQ
         {
             Resources = new List<BIQResource>();
 
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             // Read the number of resources
             int iNumResources = Formatter.ReadInt32();
@@ -678,7 +678,7 @@ namespace IndieCivEditor.BIQ
         {
             Experience = new List<BIQExperience>();
 
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             // Read the number of difficulties
             int iNumExperience = Formatter.ReadInt32();
@@ -699,7 +699,7 @@ namespace IndieCivEditor.BIQ
         {
             Espionage = new List<BIQEspionage>();
 
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             // Read the number of difficulties
             int iNumEspionage = Formatter.ReadInt32();
@@ -720,7 +720,7 @@ namespace IndieCivEditor.BIQ
         {
             Eras = new List<BIQEra>();
 
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             // Read the number of difficulties
             int iNumEras = Formatter.ReadInt32();
@@ -741,7 +741,7 @@ namespace IndieCivEditor.BIQ
         {
             Difficulties = new List<BIQDifficulty>();
 
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             // Read the number of difficulties
             int iNumDifficulties = Formatter.ReadInt32();
@@ -762,7 +762,7 @@ namespace IndieCivEditor.BIQ
         {
             Cultures = new List<BIQCulture>();
 
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             // Read the number of cultures
             int iNumCultures = Formatter.ReadInt32();
@@ -783,7 +783,7 @@ namespace IndieCivEditor.BIQ
         {
             Citizens = new List<BIQCitizen>();
 
-            string NextSection = Formatter.ReadChars( 4 );
+            string NextSection = Formatter.ReadString( 4 );
 
             // Read the number of citizens
             int iNumCitizens = Formatter.ReadInt32();
@@ -824,7 +824,7 @@ namespace IndieCivEditor.BIQ
         private bool LoadHeader()
         {
             // Read BIQ type
-            BIQHeader.Type = Formatter.ReadChars(4);
+            BIQHeader.Type = Formatter.ReadString(4);
 
             try
             {
@@ -838,7 +838,7 @@ namespace IndieCivEditor.BIQ
             }
 
             // Read BIQ version - VER#
-            Formatter.ReadChars( 4 );
+            Formatter.ReadString( 4 );
             // Read number of headers - 1
             Formatter.ReadInt32();
             // Read header length
@@ -851,9 +851,9 @@ namespace IndieCivEditor.BIQ
             BIQHeader.MajorVer = Formatter.ReadInt32();
             BIQHeader.MinorVer = Formatter.ReadInt32();
             // Read description
-            BIQHeader.Description = Formatter.ReadChars( (int)BIQHeader.BIQHeaderSizes.Description );
+            BIQHeader.Description = Formatter.ReadString( (int)BIQHeader.BIQHeaderSizes.Description );
             // Read title
-            BIQHeader.Title = Formatter.ReadChars( ( int ) BIQHeader.BIQHeaderSizes.Title );
+            BIQHeader.Title = Formatter.ReadString( ( int ) BIQHeader.BIQHeaderSizes.Title );
 
             return true;
         }

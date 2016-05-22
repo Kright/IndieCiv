@@ -28,7 +28,7 @@ namespace IndieCivEditor.BIQ
 
         public void Load( BinaryFormatter formatter )
         {
-            ExperienceLevelName = formatter.ReadChars( ( int ) BIQExperienceSizes.ExperienceLevelName );
+            ExperienceLevelName = formatter.ReadString( ( int ) BIQExperienceSizes.ExperienceLevelName );
             BaseHitPoints = formatter.ReadInt32();
             RetreatBonus = formatter.ReadInt32();
         }

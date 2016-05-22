@@ -25,11 +25,14 @@ namespace IndieCivCore.Serialization
             return false;
         }
 
-        public string ReadChars(int iNum)
+        public string ReadString(int iNum)
         {
             string t = new string(reader.ReadChars(iNum));
             t = t.Trim('\0');
             return t;
+        }
+        public char[] ReadChars(int iNum) {
+            return reader.ReadChars(iNum);
         }
         public byte ReadByte()
         {
@@ -38,6 +41,9 @@ namespace IndieCivCore.Serialization
         public short ReadShort16()
         {
             return reader.ReadInt16();
+        }
+        public ushort ReadUShort16() {
+            return reader.ReadUInt16();
         }
         public int ReadInt32()
         {

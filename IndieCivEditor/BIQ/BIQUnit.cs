@@ -77,8 +77,8 @@ namespace IndieCivEditor.BIQ
         public void Load( BinaryFormatter formatter )
         {
 		    ZoneOfControl = formatter.ReadInt32();
-            Name = formatter.ReadChars( ( int ) BIQUnitSizes.Name );
-            Civlopedia = formatter.ReadChars( ( int ) BIQUnitSizes.Civlopedia );
+            Name = formatter.ReadString( ( int ) BIQUnitSizes.Name );
+            Civlopedia = formatter.ReadString( ( int ) BIQUnitSizes.Civlopedia );
             BombardStrength = formatter.ReadInt32();
             BombardRange = formatter.ReadInt32();
             Capacity = formatter.ReadInt32();

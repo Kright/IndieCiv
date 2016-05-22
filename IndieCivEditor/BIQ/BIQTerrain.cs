@@ -65,8 +65,8 @@ namespace IndieCivEditor.BIQ
             for ( int j = 0; j < bytesOfAllowedResourceDataToInput; j++ )
                 PossibleResources.Add ( formatter.ReadByte() );
 
-            Name = formatter.ReadChars( ( int ) BIQTerrainSizes.Name );
-            Civlopedia = formatter.ReadChars( ( int ) BIQTerrainSizes.CivilopediaEntry );
+            Name = formatter.ReadString( ( int ) BIQTerrainSizes.Name );
+            Civlopedia = formatter.ReadString( ( int ) BIQTerrainSizes.CivilopediaEntry );
 
             FoodBonus = formatter.ReadInt32();
 
@@ -98,8 +98,8 @@ namespace IndieCivEditor.BIQ
             LandmarkCommerceBonus = formatter.ReadInt32();
             LandmarkMovementCost = formatter.ReadInt32();
             LandmarkDefenseBonus = formatter.ReadInt32();
-            LandmarkName = formatter.ReadChars( ( int ) BIQTerrainSizes.LandmarkName );
-            LandmarkCivlopedia = formatter.ReadChars( ( int ) BIQTerrainSizes.LandmarkCivlopedia);
+            LandmarkName = formatter.ReadString( ( int ) BIQTerrainSizes.LandmarkName );
+            LandmarkCivlopedia = formatter.ReadString( ( int ) BIQTerrainSizes.LandmarkCivlopedia);
             Unknown2 = formatter.ReadInt32();
             TerrainFlags = formatter.ReadInt32();
             DiseaseStrength = formatter.ReadInt32();

@@ -50,11 +50,11 @@ namespace IndieCivEditor.BIQ
             Unknown2 = formatter.ReadInt32();
             Width = formatter.ReadInt32();
             Unknown3 = formatter.ReadInt32();
-            Unknown4 = formatter.ReadChars( ( int ) BIQMapSizes.Unknown4 );
+            Unknown4 = formatter.ReadString( ( int ) BIQMapSizes.Unknown4 );
             MapSeed = formatter.ReadInt32();
             Flags = formatter.ReadInt32();
 
-            formatter.ReadChars(4);
+            formatter.ReadString(4);
 
 
             Tiles = new List<BIQTile>();

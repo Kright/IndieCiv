@@ -45,13 +45,13 @@ namespace IndieCivEditor.BIQ
 
         public void Load( BinaryFormatter formatter )
         {
-            EraName = formatter.ReadChars((int)BIQEraSizes.EraName);
-            CivilopediaEntry = formatter.ReadChars((int)BIQEraSizes.CivilopediaEntry);
-            Researcher1 = formatter.ReadChars((int)BIQEraSizes.Researcher1);
-            Researcher2 = formatter.ReadChars((int)BIQEraSizes.Researcher2);
-            Researcher3 = formatter.ReadChars((int)BIQEraSizes.Researcher3);
-            Researcher4 = formatter.ReadChars((int)BIQEraSizes.Researcher4);
-            Researcher5 = formatter.ReadChars((int)BIQEraSizes.Researcher5);
+            EraName = formatter.ReadString((int)BIQEraSizes.EraName);
+            CivilopediaEntry = formatter.ReadString((int)BIQEraSizes.CivilopediaEntry);
+            Researcher1 = formatter.ReadString((int)BIQEraSizes.Researcher1);
+            Researcher2 = formatter.ReadString((int)BIQEraSizes.Researcher2);
+            Researcher3 = formatter.ReadString((int)BIQEraSizes.Researcher3);
+            Researcher4 = formatter.ReadString((int)BIQEraSizes.Researcher4);
+            Researcher5 = formatter.ReadString((int)BIQEraSizes.Researcher5);
             NumberOfUsedResearcherNames = formatter.ReadInt32();
             Unknown = formatter.ReadInt32();
         }
