@@ -94,7 +94,7 @@ namespace IndieCivCore {
         };
 
         public struct SFliFrameHeader {
-            ulong size;
+            public ulong size;
             public ushort magic;
             public ushort chunks;
             public char[] expand;
@@ -108,7 +108,7 @@ namespace IndieCivCore {
         };
 
         public struct SFliChunkHeader {
-            ulong size;
+            public ulong size;
             public ushort type;
 
             public void ReadData(BinaryFormatter mFormatter) {
@@ -153,9 +153,7 @@ namespace IndieCivCore {
             for ( short frame = 0; frame < FlcHeader.frames; frame++ ) {
 
                 mBufferFrames[frame] = new byte[FlcHeader.width * FlcHeader.height];
-                //Array.Clear(mBufferFrames[frame], 0, FlcHeader.width * FlcHeader.height);                
                 mColourMap[frame] = new RGB[256];
-                //Array.Clear(mColourMap[frame], 0, 3 * 256);
 
                 if (frame > 0) {
                     Array.Copy(mBufferFrames[frame - 1], mBufferFrames[frame], sizeof(byte) * (FlcHeader.width * FlcHeader.height));
@@ -163,8 +161,15 @@ namespace IndieCivCore {
                 }
 
                 frameHeader.ReadData(mFormatter);
-
+                
                 if (frameHeader.magic != 0xf1fa) {
+                    //fseek(fp, frameHeader.Size - sizeof(frameHeader), SEEK_CUR);
+
+                    ulong size = (ulong)System.Runtime.InteropServices.Marshal.SizeOf(typeof(SFliFrameHeader));
+                    mFormatter.ReadBytes((int)(frameHeader.size - size));
+
+                    FlcHeader.frames--;
+                    frame--;
                     continue;
                 }
 
@@ -175,6 +180,10 @@ namespace IndieCivCore {
                         case 4:
                             FlcColour256(mFormatter, frame);
                             break;
+                        case 7:
+                            long read = FlcDeltaFlc(mFormatter, frame);
+                            mFormatter.ReadBytes((int)((long)chunkHeader.size - read));
+                            break;
                         case 15:
                             FlcBitwiseRun(mFormatter, frame);
                             break;
@@ -183,6 +192,76 @@ namespace IndieCivCore {
                 }
 
             }
+
+            Texture2D texture = new Texture2D(Globals.GraphicsDevice, FlcHeader.width, FlcHeader.height);
+        }
+
+        long FlcDeltaFlc(BinaryFormatter formatter, int frame) {
+            long pos, read;
+            short lines, l, b, colour;
+            byte skip;
+            sbyte change;
+
+            lines = formatter.ReadShort16();
+
+            read = 6 + sizeof(short);
+
+            l = 0;
+            while (lines > 0) {
+                pos = l * FlcHeader.width;
+
+                b = formatter.ReadShort16();
+                read += 2;
+                if ((b & 0xC000) == 0x0000) {
+                    b &= 0x3FFF;
+                    for (int j = 0; j < b; j++) {
+                        skip = formatter.ReadByte();
+                        pos += skip;
+                        read += 1;
+
+                        change = formatter.ReadSByte();
+                        read += 1;
+                        if (change > 0) {
+                            for (int i = 0; i < change; i++) {
+                                colour = formatter.ReadShort16();
+                                read += 2;
+                                mBufferFrames[frame][pos++] = (byte)(colour & 0x00FF);
+                                mBufferFrames[frame][pos++] = (byte)((colour >> 8) & 0x00FF);
+                            }
+                        }
+                        else {
+                            change = (sbyte)-change;
+                            colour = formatter.ReadShort16();
+                            read += 2;
+
+                            for (int i = 0; i < change; i++) {
+                                mBufferFrames[frame][pos++] = (byte)(colour & 0x00FF);
+                                mBufferFrames[frame][pos++] = (byte)((colour >> 8) & 0x00FF);
+                            }
+                        }
+                    }
+                    lines--;
+                    l++;
+
+                }
+                else {
+                    if ((b & 0xC000) == 0xC000)
+                        l -= b;
+                    else
+                        mBufferFrames[frame][pos++] = (byte)(b & 0x00FF);
+
+                }
+            }
+
+            if ((read % 4) == 1) {
+                formatter.ReadBytes(2);
+                read++;
+            }
+
+            
+
+            return read;
+
         }
 
         void FlcColour256(BinaryFormatter formatter, int frame) {

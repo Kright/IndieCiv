@@ -37,6 +37,9 @@ namespace IndieCivCore.Serialization
         public char ReadChar() {
             return reader.ReadChar();
         }
+        public byte[] ReadBytes(int iNum) {
+            return reader.ReadBytes(iNum);
+        }
         public byte ReadByte()
         {
             return reader.ReadByte();
