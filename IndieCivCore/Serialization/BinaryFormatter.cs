@@ -34,9 +34,15 @@ namespace IndieCivCore.Serialization
         public char[] ReadChars(int iNum) {
             return reader.ReadChars(iNum);
         }
+        public char ReadChar() {
+            return reader.ReadChar();
+        }
         public byte ReadByte()
         {
             return reader.ReadByte();
+        }
+        public sbyte ReadSByte() {
+            return reader.ReadSByte();
         }
         public short ReadShort16()
         {

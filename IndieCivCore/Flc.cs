@@ -117,8 +117,17 @@ namespace IndieCivCore {
             }
         };
 
+        //[StructLayout(LayoutKind.Sequential, Pack = 1)]
+        struct RGB {
+            public byte red, green, blue;
+        }
+
+
         public SFlcHeader FlcHeader = new SFlcHeader();
         public SCiv3Header Civ3Header = new SCiv3Header();
+
+        byte[][] mBufferFrames;
+        RGB[][] mColourMap;
 
         public string Path { get; set; }
         public UnitArt UnitArt { get; set; }
@@ -137,7 +146,21 @@ namespace IndieCivCore {
 
             SFliFrameHeader frameHeader = new SFliFrameHeader();
             SFliChunkHeader chunkHeader = new SFliChunkHeader();
+
+            mBufferFrames = new byte[FlcHeader.frames + 8][];
+            mColourMap = new RGB[FlcHeader.frames + 8][];
+
             for ( short frame = 0; frame < FlcHeader.frames; frame++ ) {
+
+                mBufferFrames[frame] = new byte[FlcHeader.width * FlcHeader.height];
+                //Array.Clear(mBufferFrames[frame], 0, FlcHeader.width * FlcHeader.height);                
+                mColourMap[frame] = new RGB[256];
+                //Array.Clear(mColourMap[frame], 0, 3 * 256);
+
+                if (frame > 0) {
+                    Array.Copy(mBufferFrames[frame - 1], mBufferFrames[frame], sizeof(byte) * (FlcHeader.width * FlcHeader.height));
+                    Array.Copy(mColourMap[frame - 1], mColourMap[frame], 256);
+                }
 
                 frameHeader.ReadData(mFormatter);
 
@@ -149,12 +172,86 @@ namespace IndieCivCore {
                     chunkHeader.ReadData(mFormatter);
 
                     switch (chunkHeader.type) {
+                        case 4:
+                            FlcColour256(mFormatter, frame);
+                            break;
                         case 15:
+                            FlcBitwiseRun(mFormatter, frame);
                             break;
 
                     }
                 }
 
+            }
+        }
+
+        void FlcColour256(BinaryFormatter formatter, int frame) {
+            short packets, idx;
+            byte skip, change;
+
+            packets = formatter.ReadShort16();
+
+            idx = 0;
+            for (int i = 0; i < packets; i++) {
+
+                skip = formatter.ReadByte();
+                idx += skip;
+
+                change = formatter.ReadByte();
+
+                if (change == 0) {
+
+                    for (idx = 0; idx < 256; idx++) {
+                        mColourMap[frame][idx].red = formatter.ReadByte();
+                        mColourMap[frame][idx].green = formatter.ReadByte();
+                        mColourMap[frame][idx].blue = formatter.ReadByte();
+                    }
+
+                }
+                else {
+                    for (int j = 0; j < change; j++) {
+                        mColourMap[frame][idx].red = formatter.ReadByte();
+                        mColourMap[frame][idx].green = formatter.ReadByte();
+                        mColourMap[frame][idx].blue = formatter.ReadByte();
+                        idx++;
+
+                    }
+                }
+
+            }
+        }
+
+        void FlcBitwiseRun(BinaryFormatter formatter, int frame) {
+            int line = 0;
+            int k, pos = 0;
+            sbyte size;
+            byte colour;
+
+            while (line++ < FlcHeader.height) {
+                formatter.ReadByte();
+                k = 0;
+                while (k < FlcHeader.width) {
+                    size = (sbyte)formatter.ReadByte();
+
+                    if (size > 0) {
+                        colour = formatter.ReadByte();
+
+                        k += size;
+                        for (int j = 0; j < size; j++ )
+                            mBufferFrames[frame][pos++] = colour;
+                    }
+                    else {
+                        size = (sbyte)-size;
+                        k += size;
+
+				        for (int j = 0; j < size; j++) {
+					        colour = formatter.ReadByte();
+                            mBufferFrames[frame][pos++] = colour;
+				        }
+
+
+                    }
+                }
             }
         }
 
