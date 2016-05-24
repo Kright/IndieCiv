@@ -98,6 +98,7 @@ namespace IndieCivEditor
                         //Log.Core.WriteError("Error loading: {0}", importDialog.FileName);
                     }
                     biqLoader.Import();
+                    //Game.Instance.Init();
                     MapManager.Current.MapTileSelectedEvent += OnMapTileSelectedEvent;
                 }
             }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using IndieCivCore.Resources;
 using IndieCivCore.Serialization;
 
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace IndieCivCore {
@@ -141,7 +142,7 @@ namespace IndieCivCore {
             long length = new System.IO.FileInfo(Path).Length;
             FileBuffer = new MemoryStream(File.ReadAllBytes(Path));
 
-            this.GetTexture(0);
+            //this.GetTexture(0);
         }
 
         long FlcDeltaFlc(BinaryFormatter formatter, int frame) {
@@ -339,16 +340,30 @@ namespace IndieCivCore {
         }
 
 
-        public Texture2D GetTexture(int Frame) {
+        public Texture2D GetTexture(int frame) {
+            Texture2D texture = null;
 
             String name = String.Format("{0}_{1}_{2}", this.UnitArt.Type, fileName, frame);
 
+            texture = UnitAssetManager.GetTexture(name);
+
+            if (texture != null) return texture;
 
             this.GetBufferFrames();
 
-            Texture2D texture = new Texture2D(Globals.GraphicsDevice, FlcHeader.width, FlcHeader.height);
+            texture = new Texture2D(Globals.GraphicsDevice, FlcHeader.width, FlcHeader.height);
 
-            //texture.
+            Color[] colorData = new Color[FlcHeader.width * FlcHeader.height];
+
+            for (var i = 0; i < colorData.Length; i++) {
+                int idx = mBufferFrames[frame][i];
+                colorData[i].R = mColourMap[frame][idx].red;
+                colorData[i].G = mColourMap[frame][idx].green;
+                colorData[i].B = mColourMap[frame][idx].blue;
+            }
+            texture.SetData<Color>(colorData);
+
+            UnitAssetManager.AddTexture(name, texture);
 
 
             //Globals.ContentManager.Load<Texture2D>()

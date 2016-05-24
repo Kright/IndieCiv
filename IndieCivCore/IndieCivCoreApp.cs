@@ -32,6 +32,7 @@ namespace IndieCivCore {
             EExecutionState = EExecutionState.Stopped;
 
             Game.Instance = new Game();
+            
 
             LocaleManager.Load();
             ResourceLoader.Load();

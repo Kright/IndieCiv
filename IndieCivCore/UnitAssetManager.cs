@@ -13,5 +13,17 @@ namespace IndieCivCore {
         public UnitAssetManager() {
             unitTextureList = new Dictionary<string, Texture2D>();
         }
+
+        public static void AddTexture(string name, Texture2D texture) {
+            if ( GetTexture(name) == null ) {
+                unitTextureList.Add(name, texture);
+            }
+        }
+
+        public static Texture2D GetTexture(string name) {
+            Texture2D texture = null;
+            unitTextureList.TryGetValue(name, out texture);
+            return texture;
+        }
     }
 }
