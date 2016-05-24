@@ -32,6 +32,11 @@ namespace IndieCivCore {
         public MapTile.NeighbouringDirections AnimDirection { get; set; }
 
         public UnitAnimation.EAnimStates AnimState { get; set; }
+        public SpriteBatch spriteBatch { get; set; }
+
+        public UnitAnimation() {
+            spriteBatch = new SpriteBatch(Globals.GraphicsDevice);
+        }
 
         public void Start(MapTile.NeighbouringDirections Direction) {
             AnimDirection = Direction;
@@ -67,9 +72,10 @@ namespace IndieCivCore {
 
             if ( CurrentTexture == null )
                 CurrentTexture = CurrentFlc.GetTexture(this.CurrentFrame);
-
-
-
+            
+            spriteBatch.Begin();
+            spriteBatch.Draw(CurrentTexture, new Vector2(x, y));
+            spriteBatch.End();
 
         }
 

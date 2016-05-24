@@ -95,6 +95,7 @@
     <Compile Include="Serialization\XmlFormatter.cs" />
     <Compile Include="TypeConverters.cs" />
     <Compile Include="UnitAnimation.cs" />
+    <Compile Include="UnitAssetManager.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>

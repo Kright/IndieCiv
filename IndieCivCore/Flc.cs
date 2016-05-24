@@ -130,70 +130,18 @@ namespace IndieCivCore {
         RGB[][] mColourMap;
 
         public string Path { get; set; }
+        public string fileName { get; set; }
         public UnitArt UnitArt { get; set; }
 
         public MemoryStream FileBuffer;
 
-        public void BufferFile(string Path) {
+        public void BufferFile(string path) {
+            this.Path = path;
+            this.fileName = System.IO.Path.GetFileNameWithoutExtension(this.Path);
             long length = new System.IO.FileInfo(Path).Length;
             FileBuffer = new MemoryStream(File.ReadAllBytes(Path));
 
-            //this.GetBufferFrames();
-
-            BinaryFormatter mFormatter = new BinaryFormatter(FileBuffer);
-            FlcHeader.ReadData(mFormatter);
-            Civ3Header.ReadData(mFormatter);
-
-            SFliFrameHeader frameHeader = new SFliFrameHeader();
-            SFliChunkHeader chunkHeader = new SFliChunkHeader();
-
-            mBufferFrames = new byte[FlcHeader.frames + 8][];
-            mColourMap = new RGB[FlcHeader.frames + 8][];
-
-            for ( short frame = 0; frame < FlcHeader.frames; frame++ ) {
-
-                mBufferFrames[frame] = new byte[FlcHeader.width * FlcHeader.height];
-                mColourMap[frame] = new RGB[256];
-
-                if (frame > 0) {
-                    Array.Copy(mBufferFrames[frame - 1], mBufferFrames[frame], sizeof(byte) * (FlcHeader.width * FlcHeader.height));
-                    Array.Copy(mColourMap[frame - 1], mColourMap[frame], 256);
-                }
-
-                frameHeader.ReadData(mFormatter);
-                
-                if (frameHeader.magic != 0xf1fa) {
-                    //fseek(fp, frameHeader.Size - sizeof(frameHeader), SEEK_CUR);
-
-                    ulong size = (ulong)System.Runtime.InteropServices.Marshal.SizeOf(typeof(SFliFrameHeader));
-                    mFormatter.ReadBytes((int)(frameHeader.size - size));
-
-                    FlcHeader.frames--;
-                    frame--;
-                    continue;
-                }
-
-                for (int chunk = 0; chunk < frameHeader.chunks; chunk++) {
-                    chunkHeader.ReadData(mFormatter);
-
-                    switch (chunkHeader.type) {
-                        case 4:
-                            FlcColour256(mFormatter, frame);
-                            break;
-                        case 7:
-                            long read = FlcDeltaFlc(mFormatter, frame);
-                            mFormatter.ReadBytes((int)((long)chunkHeader.size - read));
-                            break;
-                        case 15:
-                            FlcBitwiseRun(mFormatter, frame);
-                            break;
-
-                    }
-                }
-
-            }
-
-            Texture2D texture = new Texture2D(Globals.GraphicsDevice, FlcHeader.width, FlcHeader.height);
+            this.GetTexture(0);
         }
 
         long FlcDeltaFlc(BinaryFormatter formatter, int frame) {
@@ -334,28 +282,78 @@ namespace IndieCivCore {
             }
         }
 
-        /*unsafe SFlcHeader GetFlcHeader() {
-            fixed (byte* map = &FileBuffer[0]) {
-                return *(SFlcHeader*)map;
-            }
-        }*/
-
         public void GetBufferFrames() {
+            BinaryFormatter mFormatter = new BinaryFormatter(FileBuffer);
+            FlcHeader.ReadData(mFormatter);
+            Civ3Header.ReadData(mFormatter);
 
+            SFliFrameHeader frameHeader = new SFliFrameHeader();
+            SFliChunkHeader chunkHeader = new SFliChunkHeader();
 
-            //Array.Copy(FileBuffer.ToArray(), 0, FlcHeader, 0, sizeof(SFlcHeader));
+            mBufferFrames = new byte[FlcHeader.frames + 8][];
+            mColourMap = new RGB[FlcHeader.frames + 8][];
 
-            //FlcHeader = GetFlcHeader();
+            for (short frame = 0; frame < FlcHeader.frames; frame++) {
 
-            //FlcHeader.ReadData(FileBuffer);
+                mBufferFrames[frame] = new byte[FlcHeader.width * FlcHeader.height];
+                mColourMap[frame] = new RGB[256];
 
+                if (frame > 0) {
+                    Array.Copy(mBufferFrames[frame - 1], mBufferFrames[frame], sizeof(byte) * (FlcHeader.width * FlcHeader.height));
+                    Array.Copy(mColourMap[frame - 1], mColourMap[frame], 256);
+                }
+
+                frameHeader.ReadData(mFormatter);
+
+                if (frameHeader.magic != 0xf1fa) {
+                    //fseek(fp, frameHeader.Size - sizeof(frameHeader), SEEK_CUR);
+
+                    ulong size = (ulong)System.Runtime.InteropServices.Marshal.SizeOf(typeof(SFliFrameHeader));
+                    mFormatter.ReadBytes((int)(frameHeader.size - size));
+
+                    FlcHeader.frames--;
+                    frame--;
+                    continue;
+                }
+
+                for (int chunk = 0; chunk < frameHeader.chunks; chunk++) {
+                    chunkHeader.ReadData(mFormatter);
+
+                    switch (chunkHeader.type) {
+                        case 4:
+                            FlcColour256(mFormatter, frame);
+                            break;
+                        case 7:
+                            long read = FlcDeltaFlc(mFormatter, frame);
+                            mFormatter.ReadBytes((int)((long)chunkHeader.size - read));
+                            break;
+                        case 15:
+                            FlcBitwiseRun(mFormatter, frame);
+                            break;
+
+                    }
+                }
+
+            }
 
         }
 
 
         public Texture2D GetTexture(int Frame) {
 
-            return null;
+            String name = String.Format("{0}_{1}_{2}", this.UnitArt.Type, fileName, frame);
+
+
+            this.GetBufferFrames();
+
+            Texture2D texture = new Texture2D(Globals.GraphicsDevice, FlcHeader.width, FlcHeader.height);
+
+            //texture.
+
+
+            //Globals.ContentManager.Load<Texture2D>()
+
+            return texture;
 
         }
     }

@@ -30,7 +30,7 @@ namespace IndieCivCore.Resources {
         public void Init() {
             foreach (var Item in Anims) {
                 Flc UnitFlc = new Flc();
-                //UnitFlc.UnitArtData = this;
+                UnitFlc.UnitArt = this;
                 UnitFlc.BufferFile(Item.Path);
                 this.UnitFlc.Add(UnitFlc);
             }
