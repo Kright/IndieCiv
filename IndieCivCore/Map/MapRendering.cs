@@ -108,7 +108,7 @@ namespace IndieCivCore.Map
             Territory.AddBatch(dest, source, maptile.Owner.CivilizationData.Color);
         }
         public static void AddStartLocationBatch(MapTile maptile, Vector2 dest, Rectangle source) {
-            StartLocation.AddBatch(dest, source, maptile.Owner.CivilizationData.Color);
+            StartLocation.AddBatch(dest, source);
         }
     }
 }

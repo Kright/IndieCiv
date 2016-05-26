@@ -77,6 +77,8 @@ namespace IndieCivEditor.BIQ
             worldMap.Init(Width / 2, Height);
             IndieCivCore.MapManager.Add(worldMap);
 
+            worldMap.ShowStartLocations = true;
+
 
             //earth.MapTiles[0].Terrain = Terrain;
             //earth.MapTiles[0].TerrainArt = Art;

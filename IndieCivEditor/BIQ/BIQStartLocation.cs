@@ -27,7 +27,7 @@ namespace IndieCivEditor.BIQ
             IndieCivCore.Map.StartLocation sl = new IndieCivCore.Map.StartLocation();
             sl.Owner = (short)Owner;
             sl.OwnerType = (short)OwnerType;
-            sl.MapTile = IndieCivCore.MapManager.Current[X, Y];
+            sl.MapTile = IndieCivCore.MapManager.Current[X / 2, Y];
 
             IndieCivCore.MapManager.Current.StartLocations.Add(sl);
         }

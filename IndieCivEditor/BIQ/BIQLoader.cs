@@ -208,7 +208,7 @@ namespace IndieCivEditor.BIQ
             return true;
         }
 
-        private void ImportGeneral() {
+        private void ImportGeneral() { 
             IndieCivCore.Resources.DataGeneral.BorderExpansionMultiplier = BIQGeneral.BorderExpansionMultiplier;
             IndieCivCore.Resources.DataGeneral.BorderFactor = BIQGeneral.BorderFactor;
             IndieCivCore.Resources.DataGeneral.FoodPerCitizen = BIQGeneral.FoodPerCitizen;
