@@ -21,5 +21,15 @@ namespace IndieCivEditor.BIQ
             X = formatter.ReadInt32();
             Y = formatter.ReadInt32();
         }
+
+        public void Import() {
+
+            IndieCivCore.Map.StartLocation sl = new IndieCivCore.Map.StartLocation();
+            sl.Owner = (short)Owner;
+            sl.OwnerType = (short)OwnerType;
+            sl.MapTile = IndieCivCore.MapManager.Current[X, Y];
+
+            IndieCivCore.MapManager.Current.StartLocations.Add(sl);
+        }
     }
 }

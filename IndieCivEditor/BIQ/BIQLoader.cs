@@ -199,6 +199,7 @@ namespace IndieCivEditor.BIQ
             ImportData<BIQResource>(this.Resources);
 
             ImportWorldMap();
+            ImportStartLocations();
 
             MapManager.Current.SetReliefTextures();
 
@@ -260,6 +261,11 @@ namespace IndieCivEditor.BIQ
 
         private void ImportWorldMap() {
             BIQMap.Import();
+        }
+        private void ImportStartLocations() {
+            foreach (BIQStartLocation sl in this.StartLocations) {
+                sl.Import();
+            }
         }
 
         private void ImportGame() {

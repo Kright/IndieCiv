@@ -27,6 +27,7 @@ namespace IndieCivCore.Map
         public static BatchRendering Resource;
         public static List<BatchRendering> Relief;
         public static BatchRendering Territory;
+        public static BatchRendering StartLocation;
 
         //protected Dictionary<string, BatchRendering> ArtResources;
 
@@ -41,15 +42,18 @@ namespace IndieCivCore.Map
             Resource = new BatchRendering();
             Relief = new List<BatchRendering>();
             Territory = new BatchRendering();
+            StartLocation = new BatchRendering();
 
             AddResourceGraphic("Assets/Art/Terrain/resources.png");
             AddTerritoryGraphic("Assets/Art/Terrain/territory.png");
+            AddStartLocationGraphic("Assets/Art/Terrain/startloc.png");
 		}
 
         public static void Reset() {
             Terrain.ForEach(r => r.Reset());
             Relief.ForEach(r => r.Reset());
             Territory.Reset();
+            StartLocation.Reset();
 
             Resource.Reset();
         }
@@ -61,6 +65,7 @@ namespace IndieCivCore.Map
 
             Territory.Render();
             Resource.Render();
+            StartLocation.Render();
         }
 
         public static void AddTerritoryGraphic(string Path) {
@@ -83,6 +88,11 @@ namespace IndieCivCore.Map
         public static void AddResourceGraphic(string Path) {
             Resource.Texture = Utils.LoadTexture(Path, new Color(Color.Magenta, 255));
         }
+        public static void AddStartLocationGraphic(string Path) {
+            StartLocation.Texture = Utils.LoadTexture(Path, new Color(Color.Magenta, 255));
+        }
+
+
 
         public static void AddTerrainBatch(MapTile mapTile, Vector2 dest, Rectangle source ) {
             Terrain[mapTile.Variation].AddBatch( dest, source);
@@ -96,7 +106,9 @@ namespace IndieCivCore.Map
         }
         public static void AddTerritoryBatch(MapTile maptile, Vector2 dest, Rectangle source) {
             Territory.AddBatch(dest, source, maptile.Owner.CivilizationData.Color);
-
+        }
+        public static void AddStartLocationBatch(MapTile maptile, Vector2 dest, Rectangle source) {
+            StartLocation.AddBatch(dest, source, maptile.Owner.CivilizationData.Color);
         }
     }
 }

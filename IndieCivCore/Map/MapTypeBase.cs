@@ -13,6 +13,12 @@ using IndieCivCore.Resources;
 
 namespace IndieCivCore.Map
 {
+    public class StartLocation {
+        public short OwnerType;
+        public short Owner;
+        public MapTile MapTile { get; set;}
+    }
+
     public abstract class MapTypeBase : GameObject
     {
         public int                  Width { get; set; }
@@ -20,6 +26,7 @@ namespace IndieCivCore.Map
         public int                  Count { get { return Width * Height; } } 
 
         public bool                 Dirty { get; set; }
+        public bool                 ShowStartLocations { get; set; }
 
         public MapTile              ViewTile { get; set; }
         public MapTile              HighlightedMapTile { get; set; }
@@ -28,6 +35,7 @@ namespace IndieCivCore.Map
         public Camera               Camera { get; set; }
         public List<MapTile>        VisibleMapTiles { get; set; }
         public List<MapTile>        MapTiles { get; set; }
+        public List<StartLocation>  StartLocations { get; set; }
 
         public bool                 Scrolling;
 
@@ -46,6 +54,8 @@ namespace IndieCivCore.Map
             VisibleMapTiles = new List<MapTile>();
             MapTiles = new List<MapTile>();
             Camera = new Camera();
+
+            StartLocations = new List<StartLocation>();
         }
 
         public MapTile this [ int x, int y ]
@@ -80,6 +90,8 @@ namespace IndieCivCore.Map
         public abstract void AddResource(MapTile t);
         public abstract void AddRelief(MapTile t);
         public abstract void AddTerritory(MapTile t);
+        public abstract void AddStartLocation(StartLocation sl);
+
         public abstract bool PointInsideMapTile(MapTile MapTile);
 
         public virtual void Update ()
@@ -212,6 +224,14 @@ namespace IndieCivCore.Map
                     this.AddTerritory(t);
                 }
             }
+
+            if (this.ShowStartLocations == true) {
+                foreach ( StartLocation sl in this.StartLocations ) {
+                    if (sl.MapTile.OnScreen == true)
+                        this.AddStartLocation(sl);
+                }
+
+            }
         }
 
         private bool IsMapTileOnScreen ( MapTile t )
@@ -324,9 +344,12 @@ namespace IndieCivCore.Map
         }
 
         public MapTile GetStartingLocation(Player Player) {
-            MapTile MapTile = new MapTile();
-
-            return MapTile;
+            foreach (StartLocation sl in StartLocations) {
+                if (Player.CivilizationData.Index == sl.Owner) {
+                    return sl.MapTile;
+                }
+            }
+            return null;
         }
 
         public MapTile GetRandomLandTile() {

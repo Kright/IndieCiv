@@ -70,6 +70,23 @@ namespace IndieCivCore.Map
             MapRendering.AddResourceBatch(t, position, new Rectangle(iStartU, iStartV, 50, 50));
         }
 
+        public override void AddStartLocation(StartLocation sl) {
+            Vector2 position = new Vector2(0, 0);
+
+            Rectangle destSize = new Rectangle();
+
+            int fX = sl.MapTile.ScreenXPos - (int)(64 * MapRendering.Scale);
+            int fY = sl.MapTile.ScreenYPos - (int)(32 * MapRendering.Scale);
+
+            position.X = fX;
+            position.Y = fY;
+
+            destSize.Width = (int)(128 * MapRendering.Scale);
+            destSize.Height = (int)(64 * MapRendering.Scale);
+
+            MapRendering.AddStartLocationBatch(sl.MapTile, position, new Rectangle(0, 0, 128, 64));
+        }
+
         public override void AddRelief(MapTile t) {
             ReliefArt ReliefArt = ResourceInterface.ReliefArtData.Find(x => x.Type == t.ReliefType.ReliefArt);
 

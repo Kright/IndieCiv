@@ -164,6 +164,8 @@ namespace IndieCivCore.Map
         }
         public override void AddTerritory(MapTile t) {
         }
+        public override void AddStartLocation(StartLocation sl) {
+        }
 
         public override bool SmoothTile(MapTile MapTile) {
             return false;
