@@ -356,7 +356,16 @@ namespace IndieCivCore.Map
             MapTile MapTile = new MapTile();
 
             return MapTile;
+        }
 
+        public void CenterMapTile(MapTile mapTile) {
+            int x = mapTile.WorldXPos;
+            int y = mapTile.WorldYPos;
+
+            this.Camera.X = x;
+            this.Camera.Y = y;
+
+            this.Dirty = true;
         }
 
     }

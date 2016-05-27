@@ -206,7 +206,7 @@ namespace IndieCivEditor.BIQ
         }
 
         public void Import(BIQLoader BIQLoader) {
-            for (int i = 0; i < BIQLoader.NumPlayers; i++) {
+            /*for (int i = 0; i < BIQLoader.NumPlayers; i++) {
 
                 BIQLead Lead = BIQLoader.Lead[i];
 
@@ -217,7 +217,7 @@ namespace IndieCivEditor.BIQ
                 //Player.CurrentEra = ResourceInterface.EraData[0];
                 Player.CivilizationData = ResourceInterface.CivilizationData[i+1];
                 //Player.Government = ResourceInterface.GovernmentData[Lead.Government];
-            }
+            }*/
 
         }
     }

@@ -37,6 +37,8 @@ namespace IndieCivCore.Entities {
         public Unit(UnitData UnitData, MapTile MapTile) {
             this.UnitData = UnitData;
             this.MapTile = MapTile;
+
+            UnitAnimation = new UnitAnimation();
         }
 
         public void Init() {
@@ -95,7 +97,8 @@ namespace IndieCivCore.Entities {
         }
 
         public void CenterOnMap() {
-            throw new NotImplementedException();
+            MapManager.Current.CenterMapTile(this.MapTile);
+            //throw new NotImplementedException();
         }
     }
 }

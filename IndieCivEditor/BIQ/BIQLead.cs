@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using IndieCivCore;
+using IndieCivCore.Map;
+using IndieCivCore.Entities;
 using IndieCivCore.Serialization;
+using IndieCivCore.Resources;
 
 namespace IndieCivEditor.BIQ
 {
     public class BIQLead
     {
+        private const int ANY_CIV = -3;
+
         public enum BIQLeadSizes
         {
             LeaderName = 32,
-
         };
 
         struct StartUnits
@@ -83,6 +88,32 @@ namespace IndieCivEditor.BIQ
             Unknown3 = formatter.ReadInt32();
             StartEmbassies = formatter.ReadByte();
 
+        }
+
+        public void Import() {
+
+            Player player = PlayerManager.AddPlayer();
+            player.IsAI = true;
+
+            if (this.Civ == ANY_CIV) {
+                player.CivilizationData = ResourceInterface.CivilizationData[player.Index];
+            }
+
+            MapTile mapTile = MapManager.Current.GetStartingLocation(player);
+            if (mapTile == null) {
+                mapTile = MapManager.Current.GetRandomLandTile();
+            }
+
+            foreach (StartUnits ss in DifferentStartUnits) {
+                for (int i = 0; i < ss.UnitsOfThisType; i++) {
+                    player.AddUnit ( ResourceInterface.UnitData[ss.TypeOfStartingUnit], mapTile);
+                }
+
+            }
+
+            //Player.CurrentEra = ResourceInterface.EraData[0];
+            //Player.CivilizationData = ResourceInterface.CivilizationData[i + 1];
+            //Player.Government = ResourceInterface.GovernmentData[Lead.Government];
         }
     }
 }

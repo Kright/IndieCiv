@@ -204,6 +204,7 @@ namespace IndieCivEditor.BIQ
             MapManager.Current.SetReliefTextures();
 
             ImportGame();
+            ImportPlayers();
 
             return true;
         }
@@ -269,11 +270,16 @@ namespace IndieCivEditor.BIQ
         }
 
         private void ImportGame() {
-
             foreach (BIQGame item in this.Game) {
                 item.Import(this);
             }
 
+        }
+
+        private void ImportPlayers() {
+            foreach ( BIQLead lead in this.Lead ) {
+                lead.Import();
+            }
         }
 
         /*object LoadPropertyNames ( object obj, Type type, Dictionary<string, Tuple<DataType, Type, int>> propertyNames )
