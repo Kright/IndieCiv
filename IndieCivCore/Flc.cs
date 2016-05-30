@@ -133,6 +133,7 @@ namespace IndieCivCore {
         public string Path { get; set; }
         public string fileName { get; set; }
         public UnitArt UnitArt { get; set; }
+        public string Type { get; set; }
 
         public MemoryStream FileBuffer;
 
@@ -142,7 +143,9 @@ namespace IndieCivCore {
             long length = new System.IO.FileInfo(Path).Length;
             FileBuffer = new MemoryStream(File.ReadAllBytes(Path));
 
-            //this.GetTexture(0);
+            BinaryFormatter mFormatter = new BinaryFormatter(FileBuffer);
+            FlcHeader.ReadData(mFormatter);
+            Civ3Header.ReadData(mFormatter);
         }
 
         long FlcDeltaFlc(BinaryFormatter formatter, int frame) {
@@ -284,6 +287,7 @@ namespace IndieCivCore {
         }
 
         public void GetBufferFrames() {
+            FileBuffer.Seek(0, SeekOrigin.Begin);
             BinaryFormatter mFormatter = new BinaryFormatter(FileBuffer);
             FlcHeader.ReadData(mFormatter);
             Civ3Header.ReadData(mFormatter);
@@ -331,6 +335,8 @@ namespace IndieCivCore {
                         case 15:
                             FlcBitwiseRun(mFormatter, frame);
                             break;
+                        default:
+                            throw new NotImplementedException();
 
                     }
                 }
@@ -357,9 +363,18 @@ namespace IndieCivCore {
 
             for (var i = 0; i < colorData.Length; i++) {
                 int idx = mBufferFrames[frame][i];
-                colorData[i].R = mColourMap[frame][idx].red;
-                colorData[i].G = mColourMap[frame][idx].green;
-                colorData[i].B = mColourMap[frame][idx].blue;
+
+                if (mColourMap[frame][idx].red == 255 &&
+                    mColourMap[frame][idx].green == 0 &&
+                    mColourMap[frame][idx].blue == 255) {
+                    colorData[i] = Color.Transparent;
+                }
+                else {
+                    colorData[i].R = mColourMap[frame][idx].red;
+                    colorData[i].G = mColourMap[frame][idx].green;
+                    colorData[i].B = mColourMap[frame][idx].blue;
+                    colorData[i].A = 255;
+                }
             }
             texture.SetData<Color>(colorData);
 
