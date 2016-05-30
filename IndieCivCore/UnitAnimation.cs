@@ -41,20 +41,26 @@ namespace IndieCivCore {
         public void Start(MapTile.NeighbouringDirections Direction) {
             AnimDirection = Direction;
             CurrentFrame = StartFrame = (int)AnimDirection * CurrentFlc.Civ3Header.animLength;
-
-            EndFrame = ((int)AnimDirection * CurrentFlc.Civ3Header.animLength) + CurrentFlc.Civ3Header.animLength - 1;
+            CurrentFrame = StartFrame = 0;
+            EndFrame = 14;
+            //EndFrame = StartFrame + CurrentFlc.Civ3Header.animLength;
+            //EndFrame = ((int)AnimDirection * CurrentFlc.Civ3Header.animLength) + CurrentFlc.Civ3Header.animLength - 1;
 
             Speed = (float)CurrentFlc.FlcHeader.speed;
         }
 
         public bool Update() {
 
-            Speed -= IndieCivCoreApp.gameTime.TotalGameTime.Seconds * 1000.0f;
+            Speed -= (float)IndieCivCoreApp.gameTime.ElapsedGameTime.TotalMilliseconds;
 
             if (Speed < 0.0f) {
                 Speed = CurrentFlc.FlcHeader.speed;
 
                 CurrentFrame++;
+                CurrentTexture = null;
+
+                if (CurrentFrame >= EndFrame)
+                    CurrentFrame = StartFrame;
             }
 
             return false;
@@ -89,8 +95,8 @@ namespace IndieCivCore {
 
             }
 
-            //if ( this.CurrentFlc != null )
-              //  this.CurrentFlc.Start(direction);
+            if ( this.CurrentFlc != null )
+                this.Start(direction);
         }
     }
 }

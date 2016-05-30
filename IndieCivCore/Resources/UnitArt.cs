@@ -31,15 +31,14 @@ namespace IndieCivCore.Resources {
             foreach (var Item in Anims) {
                 Flc UnitFlc = new Flc();
                 UnitFlc.UnitArt = this;
+                UnitFlc.Type = Item.Type;
                 UnitFlc.BufferFile(Item.Path);
                 this.UnitFlc.Add(UnitFlc);
             }
         }
 
         public Flc GetUnitFlc(string type) {
-            //UnitFlc.Find(x => x.Type == type)
-
-            return null;
+            return UnitFlc.Find(x => x.Type == type);
         }
     }
 }

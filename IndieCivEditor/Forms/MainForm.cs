@@ -310,9 +310,15 @@ namespace IndieCivEditor
 
         private void Stop_Click(object sender, EventArgs e) {
             IndieCivCoreApp.EExecutionState = EExecutionState.Stopped;
+
+            Game.Instance.Reset();
         }
 
         private void Step_Click(object sender, EventArgs e) {
+
+        }
+
+        private void unitViewerToolStripMenuItem_Click(object sender, EventArgs e) {
 
         }
     }

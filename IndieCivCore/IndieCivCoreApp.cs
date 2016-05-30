@@ -33,7 +33,6 @@ namespace IndieCivCore {
 
             Game.Instance = new Game();
             
-
             LocaleManager.Load();
             ResourceLoader.Load();
 

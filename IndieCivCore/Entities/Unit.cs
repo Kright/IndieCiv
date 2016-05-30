@@ -69,11 +69,11 @@ namespace IndieCivCore.Entities {
                 this.Position.Y = MapTile.ScreenYPos;
 
                 if (Active == true) {
-                    if (FrameCount >= 0 && FrameCount <= 0.8f) {
-                        if (MapTile.OnScreen == true) {
+                    //if (FrameCount >= 0 && FrameCount <= 0.9f) {
+                        //if (MapTile.OnScreen == true) {
                             UnitAnimation.Render(Position);
-                        }
-                    }
+                        //}
+                    //}
                 }
                 else {
                     if (MapTile.OnScreen == true) {

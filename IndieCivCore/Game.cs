@@ -32,17 +32,20 @@ namespace IndieCivCore
         }
 
         public void Init() {
-            //SelectedPlayer = PlayerManager.Next(null);
+            Reset();
+        }
 
+        public void Reset() {
             StartYear = -10000;
             TurnData = ResourceInterface.TurnData[0];
             Year = StartYear;
             TurnsLeft = TurnData.NumTurns;
             StepValue = TurnData.StepValue;
 
-            SelectedPlayer = AddPlayer(ResourceInterface.CivilizationData[0], true);
+            SelectedPlayer = PlayerManager.PlayerList[0];
             SelectedPlayer.ActiveUnit.CenterOnMap();
             MapManager.Current.Player = SelectedPlayer;
+
         }
 
         public Player AddPlayer(CivilizationData CivilizationData, bool IsAI) {

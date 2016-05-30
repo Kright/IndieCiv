@@ -190,7 +190,7 @@ namespace IndieCivEditor.BIQ
                 INIFileHandler.Path = FoundPath + "\\" + this.Name + ".ini";
                 string AnimName = INIFileHandler.ReadValue("Animations", "DEFAULT");
 
-                GetUnitAnim(AnimName, UnitArt, FoundPath);
+                GetUnitAnim(AnimName, UnitArt, FoundPath, "DEFAULT");
 
 
             }
@@ -201,10 +201,11 @@ namespace IndieCivEditor.BIQ
             data.Description = "TXT_KEY_UNIT_" + Name.ToUpper();
         }
 
-        void GetUnitAnim(string AnimName, UnitArt UnitArt, string FoundPath) {
+        void GetUnitAnim(string AnimName, UnitArt UnitArt, string FoundPath, string animType) {
             Flc Flc = new Flc();
 
             Flc.UnitArt = UnitArt;
+            Flc.Type = string.Format("UNIT_ART_{0}", animType);
             UnitArt.UnitFlc.Add(Flc);
 
             if (System.IO.File.Exists(string.Format(@"Assets\Art\Units\{0}\{1}", this.Name, AnimName)) == false) 

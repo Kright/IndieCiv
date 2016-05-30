@@ -8,10 +8,10 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace IndieCivCore {
     class UnitAssetManager {
-        static public Dictionary<string, Texture2D> unitTextureList;
+        static public Dictionary<string, Texture2D> unitTextureList = new Dictionary<string, Texture2D>();
 
         public UnitAssetManager() {
-            unitTextureList = new Dictionary<string, Texture2D>();
+            //unitTextureList = new Dictionary<string, Texture2D>();
         }
 
         public static void AddTexture(string name, Texture2D texture) {
