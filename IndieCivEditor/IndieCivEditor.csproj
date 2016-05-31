@@ -102,6 +102,15 @@
     <Compile Include="Forms\RulesForm.Designer.cs">
       <DependentUpon>RulesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UnitViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UnitViewer.Designer.cs">
+      <DependentUpon>UnitViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UnitViewerRender.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="GraphicsDeviceControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -137,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RulesForm.resx">
       <DependentUpon>RulesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UnitViewer.resx">
+      <DependentUpon>UnitViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

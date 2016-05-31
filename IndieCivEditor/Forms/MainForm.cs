@@ -319,7 +319,8 @@ namespace IndieCivEditor
         }
 
         private void unitViewerToolStripMenuItem_Click(object sender, EventArgs e) {
-
+            UnitViewer uv = new UnitViewer();
+            uv.ShowDialog();
         }
     }
 }
