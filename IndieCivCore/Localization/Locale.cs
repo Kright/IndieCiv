@@ -38,7 +38,7 @@ namespace IndieCivCore.Localization {
                 return Strings[Key];
             }
             catch (Exception e) {
-                Console.WriteLine(e);
+                //Console.WriteLine(e);
             }
             return "UNKNOWN LOCALE KEY";
         }

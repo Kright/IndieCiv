@@ -85,27 +85,29 @@ namespace IndieCivEditor
 
             IndieCivEditorApp.Render();
 
-            sprite_batch.Begin();
+            if (sprite_batch != null) {
+                sprite_batch.Begin();
 
-            if (MapManager.Current != null && MapManager.Current.HighlightedMapTile != null) {
+                if (MapManager.Current != null && MapManager.Current.HighlightedMapTile != null) {
 
-                int x = MapManager.Current.HighlightedMapTile.ScreenXPos - MapRendering.TileWidthHalf;
-                int y = MapManager.Current.HighlightedMapTile.ScreenYPos - MapRendering.TileHeightHalf;
+                    int x = MapManager.Current.HighlightedMapTile.ScreenXPos - MapRendering.TileWidthHalf;
+                    int y = MapManager.Current.HighlightedMapTile.ScreenYPos - MapRendering.TileHeightHalf;
 
-                sprite_batch.Draw(MapTileFrame, new Vector2(x, y), new Color(255, 255, 255, 100));
+                    sprite_batch.Draw(MapTileFrame, new Vector2(x, y), new Color(255, 255, 255, 100));
+                }
+                if (MapManager.Current != null && MapManager.Current.SelectedMapTile != null) {
+                    int x = MapManager.Current.SelectedMapTile.ScreenXPos - MapRendering.TileWidthHalf;
+                    int y = MapManager.Current.SelectedMapTile.ScreenYPos - MapRendering.TileHeightHalf;
+
+                    sprite_batch.Draw(MapTileFrame, new Vector2(x, y), new Color(255, 255, 255, 255));
+
+                }
+
+
+                sprite_batch.DrawString(sprite_font, fps, new Vector2(1, 1), Color.Black);
+                sprite_batch.DrawString(sprite_font, fps, new Vector2(0, 0), Color.White);
+                sprite_batch.End();
             }
-            if (MapManager.Current != null && MapManager.Current.SelectedMapTile != null) {
-                int x = MapManager.Current.SelectedMapTile.ScreenXPos - MapRendering.TileWidthHalf;
-                int y = MapManager.Current.SelectedMapTile.ScreenYPos - MapRendering.TileHeightHalf;
-
-                sprite_batch.Draw(MapTileFrame, new Vector2(x, y), new Color(255, 255, 255, 255));
-
-            }
-
-
-            sprite_batch.DrawString(sprite_font, fps, new Vector2(1, 1), Color.Black);
-            sprite_batch.DrawString(sprite_font, fps, new Vector2(0, 0), Color.White);
-            sprite_batch.End();
 
             IndieCivEditorApp.MainForm.UpdateToolStrip();
 

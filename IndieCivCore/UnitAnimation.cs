@@ -51,6 +51,8 @@ namespace IndieCivCore {
 
         public bool Update() {
 
+            if (CurrentFlc == null) return false;
+
             Speed -= (float)IndieCivCoreApp.gameTime.ElapsedGameTime.TotalMilliseconds;
 
             if (Speed < 0.0f) {
@@ -59,7 +61,7 @@ namespace IndieCivCore {
                 CurrentFrame++;
                 CurrentTexture = null;
 
-                if (CurrentFrame >= EndFrame)
+                if (CurrentFrame > EndFrame)
                     CurrentFrame = StartFrame;
             }
 

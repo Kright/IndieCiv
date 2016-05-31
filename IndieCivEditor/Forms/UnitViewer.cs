@@ -13,13 +13,30 @@ using IndieCivCore.Localization;
 
 namespace IndieCivEditor.Forms {
     public partial class UnitViewer : Form {
+        UnitData unitData = null;
+
         public UnitViewer() {
             InitializeComponent();
 
             foreach ( UnitData ud in ResourceInterface.UnitData ) {
                 this.UnitViewer_UnitList.Items.Add(ud.ToString());
-
             }
+        }
+
+        private void UnitViewer_UnitList_SelectedIndexChanged(object sender, EventArgs e) {
+            ComboBox comboBox = (ComboBox)sender;
+
+            string selectedUnit = (string)comboBox.SelectedItem;
+
+            unitData = ResourceInterface.UnitData.Find(u => u.Index == comboBox.SelectedIndex);
+
+            this.unitViewerRender1.unitAnimation.PlayAnimation(IndieCivCore.UnitAnimation.EAnimStates.EAnimState_Default,
+                                                                IndieCivCore.Map.MapTile.NeighbouringDirections.South, 
+                                                                unitData);
+        }
+
+        private void EndFrameSpinner_ValueChanged(object sender, EventArgs e) {
+            this.unitViewerRender1.unitAnimation.EndFrame = (int)EndFrameSpinner.Value;
         }
     }
 }

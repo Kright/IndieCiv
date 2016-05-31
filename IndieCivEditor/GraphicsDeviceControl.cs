@@ -42,6 +42,8 @@ namespace IndieCivEditor
         // the same underlying GraphicsDevice, managed by this helper service.
         GraphicsDeviceService graphicsDeviceService;
 
+        SwapChainRenderTarget _renderTarget;
+
 
         #endregion
 
@@ -55,6 +57,9 @@ namespace IndieCivEditor
         {
             get { return graphicsDeviceService.GraphicsDevice; }
         }
+
+        public RenderTarget2D DefaultRenderTarget { get { return _renderTarget; } }
+
 
 
         /// <summary>
@@ -75,7 +80,8 @@ namespace IndieCivEditor
         #region Initialization
 
 
-        protected GraphicsDeviceControl() {
+        protected GraphicsDeviceControl()
+            : base() {
             _keys = new List<Microsoft.Xna.Framework.Input.Keys>();
         }
 
@@ -91,11 +97,15 @@ namespace IndieCivEditor
                                                                      ClientSize.Width,
                                                                      ClientSize.Height);
 
+                _renderTarget = new SwapChainRenderTarget(GraphicsDevice, Handle, ClientSize.Width, ClientSize.Height);
+
                 // Register the service, so components like ContentManager can find it.
                 services.AddService<IGraphicsDeviceService>(graphicsDeviceService);
 
                 // Give derived classes a chance to initialize themselves.
                 Initialize();
+
+                return;
             }
 
             base.OnCreateControl();
@@ -111,6 +121,11 @@ namespace IndieCivEditor
             {
                 graphicsDeviceService.Release(disposing);
                 graphicsDeviceService = null;
+            }
+
+            if (_renderTarget != null) {
+                _renderTarget.Dispose();
+                _renderTarget = null;
             }
 
             base.Dispose(disposing);
@@ -135,6 +150,7 @@ namespace IndieCivEditor
             {
                 // Draw the control using the GraphicsDevice.
                 Draw();
+                OnAfterDraw(EventArgs.Empty);
                 EndDraw();
                 //Invalidate();
             }
@@ -167,26 +183,31 @@ namespace IndieCivEditor
                 return deviceResetError;
             }
 
+            GraphicsDevice.SetRenderTarget(_renderTarget);
+
             // Many GraphicsDeviceControl instances can be sharing the same
             // GraphicsDevice. The device backbuffer will be resized to fit the
             // largest of these controls. But what if we are currently drawing
             // a smaller control? To avoid unwanted stretching, we set the
             // viewport to only use the top left portion of the full backbuffer.
-            Viewport viewport = new Viewport();
+            //Viewport viewport = new Viewport();
 
-            viewport.X = 0;
-            viewport.Y = 0;
+            //viewport.X = 0;
+            //viewport.Y = 0;
 
-            viewport.Width = ClientSize.Width;
-            viewport.Height = ClientSize.Height;
+            //viewport.Width = ClientSize.Width;
+            //viewport.Height = ClientSize.Height;
 
-            viewport.MinDepth = 0;
-            viewport.MaxDepth = 1;
+            //viewport.MinDepth = 0;
+            //viewport.MaxDepth = 1;
 
-            GraphicsDevice.Viewport = viewport;
+            GraphicsDevice.Viewport = this.Viewport;
 
             return null;
         }
+
+        public Viewport Viewport { get { return new Viewport(0, 0, ClientSize.Width, ClientSize.Height); } }
+
 
 
         /// <summary>
@@ -202,8 +223,9 @@ namespace IndieCivEditor
                 Rectangle sourceRectangle = new Rectangle(0, 0, ClientSize.Width,
                                                                 ClientSize.Height);
 
+                _renderTarget.Present();
                 //GraphicsDevice.Present(sourceRectangle, null, this.Handle);
-                GraphicsDevice.Present();
+                //GraphicsDevice.Present();
             }
             catch
             {
@@ -249,8 +271,13 @@ namespace IndieCivEditor
             {
                 try
                 {
-                    graphicsDeviceService.ResetDevice(ClientSize.Width,
-                                                      ClientSize.Height);
+                    //graphicsDeviceService.ResetDevice(ClientSize.Width,
+                                                      //ClientSize.Height);
+                    graphicsDeviceService.ResetDevice(_renderTarget.Width, _renderTarget.Height);
+
+                    _renderTarget.Dispose();
+                    _renderTarget = new SwapChainRenderTarget(GraphicsDevice, Handle, ClientSize.Width, ClientSize.Height);
+                
                 }
                 catch (Exception e)
                 {
@@ -328,6 +355,21 @@ namespace IndieCivEditor
 
 
         #endregion
+
+        private readonly object AfterDrawEventLock = new object();
+        private EventHandler AfterDrawEvent;
+        public event EventHandler AfterDraw {
+            add { lock (AfterDrawEventLock) { AfterDrawEvent += value; } }
+            remove { lock (AfterDrawEventLock) { AfterDrawEvent -= value; } }
+        }
+        protected virtual void OnAfterDraw(EventArgs e) {
+            EventHandler handler = null;
+            lock (AfterDrawEventLock) {
+                handler = AfterDrawEvent;
+                if (handler == null) return;
+            }
+            handler(this, e);
+        }
 
         #region Input
 
