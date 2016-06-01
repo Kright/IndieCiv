@@ -40,10 +40,10 @@ namespace IndieCivCore {
 
         public void Start(MapTile.NeighbouringDirections Direction) {
             AnimDirection = Direction;
-            CurrentFrame = StartFrame = (int)AnimDirection * CurrentFlc.Civ3Header.animLength;
-            CurrentFrame = StartFrame = 0;
-            EndFrame = 14;
-            //EndFrame = StartFrame + CurrentFlc.Civ3Header.animLength;
+            CurrentFrame = StartFrame = (int)AnimDirection * (CurrentFlc.Civ3Header.animLength+1);
+            //CurrentFrame = StartFrame = 0;
+            //EndFrame = 14;
+            EndFrame = StartFrame + CurrentFlc.Civ3Header.animLength;
             //EndFrame = ((int)AnimDirection * CurrentFlc.Civ3Header.animLength) + CurrentFlc.Civ3Header.animLength - 1;
 
             Speed = (float)CurrentFlc.FlcHeader.speed;

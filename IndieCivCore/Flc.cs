@@ -298,7 +298,7 @@ namespace IndieCivCore {
             mBufferFrames = new byte[FlcHeader.frames + 8][];
             mColourMap = new RGB[FlcHeader.frames + 8][];
 
-            for (short frame = 0; frame < FlcHeader.frames; frame++) {
+            for (short frame = 0; frame < FlcHeader.frames + 8; frame++) {
 
                 mBufferFrames[frame] = new byte[FlcHeader.width * FlcHeader.height];
                 mColourMap[frame] = new RGB[256];

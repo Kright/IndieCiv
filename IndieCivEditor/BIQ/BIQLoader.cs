@@ -244,9 +244,16 @@ namespace IndieCivEditor.BIQ
                 }
                 else {
                     List<string> searchPaths = new List<string>();
-                    searchPaths.Add(@"D:\Program Files (x86)\Firaxis Games\Civilization III Complete\Art\Units");
-                    searchPaths.Add(@"D:\Program Files (x86)\Firaxis Games\Civilization III Complete\civ3PTW\Art\Units");
-                    searchPaths.Add(@"D:\Program Files (x86)\Firaxis Games\Civilization III Complete\Conquests\Art\Units");
+                    //searchPaths.Add(@"D:\Program Files (x86)\Firaxis Games\Civilization III Complete\Art\Units");
+                    //searchPaths.Add(@"D:\Program Files (x86)\Firaxis Games\Civilization III Complete\civ3PTW\Art\Units");
+                    //searchPaths.Add(@"D:\Program Files (x86)\Firaxis Games\Civilization III Complete\Conquests\Art\Units");
+                    //searchPaths.Add(@"E:\Old\Stuff\Programming\Projects\Civ Resources\Units");
+                    searchPaths.Add(@"E:\Development\IndieCiv\Assets\Art\Units");
+                    //searchPaths.Add(@"E:\Old\Stuff\RaR\RAR\Art\Units");
+                    //searchPaths.Add(@"E:\Old\Stuff\Programming\Projects\World War II Europe+America\World War II Europe+America\art\Units");
+                    
+
+                    
                     item.Import(searchPaths);
                 }
                 

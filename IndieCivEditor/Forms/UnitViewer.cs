@@ -36,7 +36,13 @@ namespace IndieCivEditor.Forms {
         }
 
         private void EndFrameSpinner_ValueChanged(object sender, EventArgs e) {
-            this.unitViewerRender1.unitAnimation.EndFrame = (int)EndFrameSpinner.Value;
+            NumericUpDown spinner = (NumericUpDown)sender;
+            this.unitViewerRender1.unitAnimation.EndFrame = (int)spinner.Value;
+        }
+
+        private void StartFrameSpinner_ValueChanged(object sender, EventArgs e) {
+            NumericUpDown spinner = (NumericUpDown)sender;
+            this.unitViewerRender1.unitAnimation.StartFrame = (int)spinner.Value;
         }
     }
 }

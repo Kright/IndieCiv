@@ -24,16 +24,16 @@
         /// </summary>
         private void InitializeComponent() {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.EndFrameSpinner = new System.Windows.Forms.NumericUpDown();
+            this.StartFrameSpinner = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.UnitViewer_UnitList = new System.Windows.Forms.ComboBox();
             this.unitViewerRender1 = new IndieCivEditor.UnitViewerRender();
-            this.StartFrameSpinner = new System.Windows.Forms.NumericUpDown();
-            this.EndFrameSpinner = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StartFrameSpinner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EndFrameSpinner)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StartFrameSpinner)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -48,6 +48,50 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(542, 68);
             this.panel1.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(267, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "End Frame:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(197, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Start Frame:";
+            // 
+            // EndFrameSpinner
+            // 
+            this.EndFrameSpinner.Location = new System.Drawing.Point(270, 16);
+            this.EndFrameSpinner.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.EndFrameSpinner.Name = "EndFrameSpinner";
+            this.EndFrameSpinner.Size = new System.Drawing.Size(58, 20);
+            this.EndFrameSpinner.TabIndex = 3;
+            this.EndFrameSpinner.ValueChanged += new System.EventHandler(this.EndFrameSpinner_ValueChanged);
+            // 
+            // StartFrameSpinner
+            // 
+            this.StartFrameSpinner.Location = new System.Drawing.Point(200, 16);
+            this.StartFrameSpinner.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.StartFrameSpinner.Name = "StartFrameSpinner";
+            this.StartFrameSpinner.Size = new System.Drawing.Size(61, 20);
+            this.StartFrameSpinner.TabIndex = 2;
+            this.StartFrameSpinner.ValueChanged += new System.EventHandler(this.StartFrameSpinner_ValueChanged);
             // 
             // label1
             // 
@@ -76,39 +120,6 @@
             this.unitViewerRender1.TabIndex = 0;
             this.unitViewerRender1.Text = "unitViewerRender1";
             // 
-            // StartFrameSpinner
-            // 
-            this.StartFrameSpinner.Location = new System.Drawing.Point(200, 16);
-            this.StartFrameSpinner.Name = "StartFrameSpinner";
-            this.StartFrameSpinner.Size = new System.Drawing.Size(61, 20);
-            this.StartFrameSpinner.TabIndex = 2;
-            // 
-            // EndFrameSpinner
-            // 
-            this.EndFrameSpinner.Location = new System.Drawing.Point(270, 16);
-            this.EndFrameSpinner.Name = "EndFrameSpinner";
-            this.EndFrameSpinner.Size = new System.Drawing.Size(58, 20);
-            this.EndFrameSpinner.TabIndex = 3;
-            this.EndFrameSpinner.ValueChanged += new System.EventHandler(this.EndFrameSpinner_ValueChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(197, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Start Frame:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(267, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "End Frame:";
-            // 
             // UnitViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,8 +133,8 @@
             this.Text = "UnitViewer";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StartFrameSpinner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EndFrameSpinner)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StartFrameSpinner)).EndInit();
             this.ResumeLayout(false);
 
         }

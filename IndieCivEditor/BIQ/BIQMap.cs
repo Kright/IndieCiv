@@ -92,8 +92,8 @@ namespace IndieCivEditor.BIQ
 
                 MapTile.Region = Tiles[i].Continent;
 
-                if (Tiles[i].Border > 0)
-                    MapTile.Owner = PlayerManager.PlayerList[Tiles[i].Border - 1];
+                //if (Tiles[i].Border > 0)
+                    //MapTile.Owner = PlayerManager.PlayerList[Tiles[i].Border - 1];
 
                 if (Tiles[i].Resource != -1) {
                     //IndieCivCore.Resources.ResourceRef<IndieCivCore.Resources.ResourceData> Resource = IndieCivCore.Resources.ResourceProvider.RequestResource<IndieCivCore.Resources.ResourceData>(IndieCivCore.Resources.ResourceData.VirtualResourcePath + Tiles[i].Resource);
