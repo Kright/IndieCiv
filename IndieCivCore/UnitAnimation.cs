@@ -61,8 +61,10 @@ namespace IndieCivCore {
                 CurrentFrame++;
                 CurrentTexture = null;
 
-                if (CurrentFrame > EndFrame)
+                if (CurrentFrame > EndFrame) {
                     CurrentFrame = StartFrame;
+                    return true;
+                }
             }
 
             return false;
