@@ -29,6 +29,9 @@ namespace IndieCivCore.Entities
             foreach (var Item in UnitList) {
                 Item.Update();
             }
+            foreach (var City in CityList) {
+                City.Update();
+            }
 
         }
 
@@ -52,6 +55,23 @@ namespace IndieCivCore.Entities
 
             ResetUnits();
             ActiveUnit = GetNextUnit();
+        }
+
+        public City BuildCity(Unit unit) {
+            if (unit != null) {
+                City city = new City();
+
+                city.Owner = this;
+                city.MapTile = unit.MapTile;
+                city.MapTile.City = city;
+                city.Init();
+
+                this.CityList.Add(city);
+
+                return city;
+            }
+
+            return null;
         }
 
         public void ResetUnits() {

@@ -47,7 +47,10 @@ namespace IndieCivCore.Entities {
 
         public override void Update() {
             if (UnitAnimation.Update()) {
-
+                // End of animation
+                if ((this.UnitStates & EUnitStates.EUnitState_Building) == EUnitStates.EUnitState_Building) {
+                    this.Owner.BuildCity(this);
+                }
             }
 
             if (Active == true) {
@@ -69,11 +72,11 @@ namespace IndieCivCore.Entities {
                 this.Position.Y = MapTile.ScreenYPos;
 
                 if (Active == true) {
-                    //if (FrameCount >= 0 && FrameCount <= 0.9f) {
-                        //if (MapTile.OnScreen == true) {
+                    if (FrameCount >= 0 && FrameCount <= 0.9f) {
+                        if (MapTile.OnScreen == true) {
                             UnitAnimation.Render(Position);
-                        //}
-                    //}
+                        }
+                    }
                 }
                 else {
                     if (MapTile.OnScreen == true) {
