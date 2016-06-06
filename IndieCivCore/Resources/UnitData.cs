@@ -11,6 +11,23 @@ namespace IndieCivCore.Resources {
         EUnitData_DomainType_Air,
     };
 
+    public enum EUnitData_AIStrategies {
+        EUnitData_AIStrategy_Offense = (1 << 0),
+        EUnitData_AIStrategy_Defense = (1 << 1),
+        EUnitData_AIStrategy_Artillery = (1 << 2),
+        EUnitData_AIStrategy_Explore = (1 << 3),
+        EUnitData_AIStrategy_Army = (1 << 4),
+        EUnitData_AIStrategy_CruiseMissile = (1 << 5),
+        EUnitData_AIStrategy_AirBombard = (1 << 6),
+        EUnitData_AIStrategy_AirDefense = (1 << 7),
+        EUnitData_AIStrategy_NavalPower = (1 << 8),
+        EUnitData_AIStrategy_AirTransport = (1 << 9),
+        EUnitData_AIStrategy_NavalTransport = (1 << 10),
+        EUnitData_AIStrategy_NavalCarrier = (1 << 11),
+        EUnitData_AIStrategy_Terraform = (1 << 12),
+        EUnitData_AIStrategy_Settle = (1 << 13),
+    }
+
     public class UnitData : DataResource {
         public int NumMoves { get; set; }
         public int Cost { get; set; }
@@ -24,13 +41,19 @@ namespace IndieCivCore.Resources {
 
         public UnitArt UnitArt { get; set; }
 
+        public bool HasStrategy(EUnitData_AIStrategies strategy) {
+            if ((this.AIStrategies & (long)strategy) == (long)strategy)
+                return true;
+
+            return false;
+        }
+
         public Flc GetUnitAnimation(string type) {
 
             if (UnitArt == null)
                 return null;
 
             return UnitArt.GetUnitFlc(type);
-
         }
     }
 }

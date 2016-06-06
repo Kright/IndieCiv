@@ -26,7 +26,7 @@ namespace IndieCivCore.Entities {
 
         public MapTile MapTile { get; set; }
 
-        public Civilization Owner { get; set; }
+        public Player Owner { get; set; }
         public UnitData UnitData { get; set; }
         public UnitAnimation UnitAnimation { get; set; }
 
@@ -58,6 +58,10 @@ namespace IndieCivCore.Entities {
                 FrameCount += (float)IndieCivCoreApp.gameTime.ElapsedGameTime.TotalSeconds;
                 if (FrameCount >= 1.0f)
                     FrameCount = 0;
+
+                if ( this.Owner.IsAI == true ) {
+                    UnitAI.UpdateAI(this);
+                }
             }
 
         }
