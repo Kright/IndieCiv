@@ -94,6 +94,43 @@ namespace IndieCivCore.Map
 
         public abstract bool PointInsideMapTile(MapTile MapTile);
 
+        private MapTile IterateDirectionTileRange(List<MapTile> tileRangeList, MapTile mapTile, int range, int testRange, MapTile.NeighbouringDirections direction, bool IgnoreCorners, int InitialRange, bool IgnoreCorners) {
+            MapTile Tile = mapTile;
+            for (int i = 0; i < range; i++) {
+                Tile = Tile.NeighbouringTiles[direction];
+                if (Tile != null) {
+                    if ((IgnoreCorners == true && i < testRange) || IgnoreCorners == false)
+                        tileRangeList.Add(Tile);
+                }
+            }
+
+            return Tile;
+        }
+        public void IterateTileRange(MapTile mapTile, int range, bool IgnoreCorners, bool IncludeStartTile) {
+            int i;
+            MapTile HTile = mapTile;
+            MapTile VTile = mapTile;
+
+            List<MapTile> tileRangeList = new List<MapTile>();
+
+            if (IncludeStartTile == true)
+                tileRangeList.Add(mapTile);
+
+            int InitialRange = range;
+            int SideCount = (range * 2) + 1;
+            int MaxSideCount = (range * 2) + 1;
+
+            while (range > 0) {
+                HTile = IterateDirectionTileRange(tileRangeList, mapTile, range, InitialRange - 1, MapTile.NeighbouringDirections.West, IgnoreCorners, InitialRange, IgnoreCorners);
+
+                VTile = IterateDirectionTileRange(tileRangeList, HTile, SideCount - 1, MaxSideCount - 2, MapTile.NeighbouringDirections.Northeast, IgnoreCorners, InitialRange, IgnoreCorners);
+                VTile = IterateDirectionTileRange(tileRangeList, HTile, SideCount - 1, MaxSideCount - 2, MapTile.NeighbouringDirections.Southeast, IgnoreCorners, InitialRange, IgnoreCorners);
+
+                HTile = IterateDirectionTileRange(tileRangeList, mapTile, range, InitialRange - 1, MapTile.NeighbouringDirections.East, IgnoreCorners, InitialRange, IgnoreCorners);
+
+            }
+        }
+
         public virtual void Update ()
         {
             UpdateInput();
